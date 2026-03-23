@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Russell Research Lab | Home</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300;1,9..40,400&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+:root {
+  --bg-primary: #06080f;
+  --bg-secondary: #0b0f1a;
+  --bg-card: #0f1424;
+  --bg-card-hover: #141a30;
+  --accent: #2d5fce;
+  --accent-light: #4b7ff5;
+  --accent-subtle: #1a2d5a;
+  --text-primary: #e8ecf4;
+  --text-secondary: #8a94a8;
+  --text-muted: #505a6e;
+  --border: #1a2035;
+  --border-light: #253050;
+  --font-display: 'Playfair Display', Georgia, serif;
+  --font-body: 'DM Sans', system-ui, sans-serif;
+  --max-width: 1200px;
+  --nav-height: 72px;
+}
+html { scroll-behavior: smooth; }
+body { font-family: var(--font-body); background: var(--bg-primary); color: var(--text-primary); line-height: 1.7; overflow-x: hidden; }
+::selection { background: var(--accent); color: white; }
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--bg-primary); }
+::-webkit-scrollbar-thumb { background: var(--accent-subtle); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--accent); }
+
+/* ── NAV ── */
+.nav { position: fixed; top: 0; left: 0; right: 0; height: var(--nav-height); background: rgba(6,8,15,0.92); backdrop-filter: blur(20px); border-bottom: 1px solid var(--border); z-index: 1000; display: flex; align-items: center; justify-content: center; }
+.nav-inner { width: 100%; max-width: var(--max-width); padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; }
+.nav-logo { display: flex; align-items: center; gap: 0.85rem; text-decoration: none; color: var(--text-primary); }
+.nav-logo-text { font-family: var(--font-display); font-size: 1.15rem; font-weight: 600; }
+.nav-logo-text span { color: var(--accent-light); }
+.nav-links { display: flex; align-items: center; gap: 0.25rem; list-style: none; }
+.nav-links a { color: var(--text-secondary); text-decoration: none; font-size: 0.88rem; font-weight: 400; padding: 0.5rem 1rem; border-radius: 6px; transition: all 0.25s ease; }
+.nav-links a:hover { color: var(--text-primary); background: rgba(45,95,206,0.1); }
+.nav-links a.active { color: var(--text-primary); background: rgba(45,95,206,0.12); }
+.mobile-toggle { display: none; background: none; border: none; color: var(--text-primary); font-size: 1.5rem; cursor: pointer; }
+
+/* ── HERO ── */
+.hero { min-height: 100vh; display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; padding-top: var(--nav-height); }
+.hero-bg { position: absolute; inset: 0; background: radial-gradient(ellipse 80% 60% at 65% 45%, rgba(45,95,206,0.15) 0%, transparent 70%), radial-gradient(ellipse 50% 40% at 30% 60%, rgba(75,127,245,0.08) 0%, transparent 60%); }
+.hero-bg::after { content: ''; position: absolute; inset: 0; background-image: linear-gradient(rgba(45,95,206,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(45,95,206,0.03) 1px, transparent 1px); background-size: 60px 60px; mask-image: radial-gradient(ellipse 70% 60% at 50% 50%, black 20%, transparent 70%); }
+.hero-content { position: relative; z-index: 1; max-width: var(--max-width); width: 100%; padding: 2rem; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+.hero-text h1 { font-family: var(--font-display); font-size: clamp(3rem,6vw,5rem); font-weight: 600; line-height: 1.1; letter-spacing: -0.02em; margin-bottom: 1.5rem; }
+.hero-text h1 .accent { background: linear-gradient(135deg, var(--accent-light), #7ba4f7); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+.hero-tagline { font-size: 1.15rem; color: var(--text-secondary); line-height: 1.8; max-width: 500px; margin-bottom: 2rem; }
+.hero-affil { display: flex; align-items: center; gap: 1.5rem; margin-bottom: 2.5rem; }
+.hero-affil-item { font-size: 0.82rem; color: var(--text-muted); letter-spacing: 0.05em; text-transform: uppercase; font-weight: 500; padding-left: 1rem; border-left: 2px solid var(--accent-subtle); }
+.hero-btns { display: flex; gap: 1rem; flex-wrap: wrap; }
+.btn { display: inline-block; padding: 0.75rem 1.75rem; border-radius: 8px; font-size: 0.9rem; font-weight: 500; text-decoration: none; transition: all 0.25s ease; }
+.btn-primary { background: var(--accent); color: white; }
+.btn-primary:hover { background: var(--accent-light); transform: translateY(-2px); }
+.btn-outline { border: 1px solid var(--border-light); color: var(--text-secondary); }
+.btn-outline:hover { border-color: var(--accent); color: var(--accent-light); transform: translateY(-2px); }
+.hero-visual { display: flex; align-items: center; justify-content: center; }
+
+/* ── 3D BLASTOCYST ── */
+.blasto-wrap {
+  width: 420px; height: 420px;
+  position: relative;
+  animation: floatAnim 7s ease-in-out infinite;
+  filter: drop-shadow(0 0 80px rgba(45,95,206,0.35)) drop-shadow(0 0 30px rgba(75,127,245,0.2));
+}
+@keyframes floatAnim { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-14px); } }
+
+/* Outer zona pellucida glow ring */
+.blasto-wrap::before {
+  content: '';
+  position: absolute; inset: -8px;
+  border-radius: 50%;
+  background: transparent;
+  border: 1.5px dashed rgba(75,127,245,0.25);
+  animation: spinSlow 40s linear infinite;
+}
+@keyframes spinSlow { to { transform: rotate(360deg); } }
+
+/* Main sphere body — trophectoderm */
+.blasto-sphere {
+  width: 100%; height: 100%;
+  border-radius: 50%;
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 35% 30%, rgba(100,150,255,0.5) 0%, transparent 45%),
+    radial-gradient(circle at 70% 70%, rgba(15,40,100,0.8) 0%, transparent 50%),
+    radial-gradient(circle at 50% 50%, #0d2560 0%, #040c20 100%);
+  box-shadow:
+    inset 0 0 60px rgba(0,0,0,0.8),
+    inset -20px -20px 60px rgba(0,0,20,0.6),
+    inset 15px 10px 40px rgba(60,100,255,0.15),
+    0 0 60px rgba(30,70,200,0.3);
+}
+
+/* Trophectoderm cell texture — bumpy surface like reference image */
+.blasto-sphere::before {
+  content: '';
+  position: absolute; inset: 0;
+  border-radius: 50%;
+  background-image:
+    radial-gradient(circle at 12% 18%, rgba(70,120,255,0.35) 0%, transparent 8%),
+    radial-gradient(circle at 28% 8%, rgba(50,100,220,0.3) 0%, transparent 7%),
+    radial-gradient(circle at 45% 5%, rgba(70,120,255,0.32) 0%, transparent 7%),
+    radial-gradient(circle at 62% 10%, rgba(50,100,220,0.28) 0%, transparent 8%),
+    radial-gradient(circle at 78% 18%, rgba(70,120,255,0.3) 0%, transparent 7%),
+    radial-gradient(circle at 88% 32%, rgba(50,100,220,0.32) 0%, transparent 8%),
+    radial-gradient(circle at 92% 48%, rgba(70,120,255,0.28) 0%, transparent 7%),
+    radial-gradient(circle at 88% 65%, rgba(50,100,220,0.3) 0%, transparent 8%),
+    radial-gradient(circle at 78% 80%, rgba(70,120,255,0.28) 0%, transparent 7%),
+    radial-gradient(circle at 60% 90%, rgba(50,100,220,0.3) 0%, transparent 8%),
+    radial-gradient(circle at 42% 92%, rgba(70,120,255,0.28) 0%, transparent 7%),
+    radial-gradient(circle at 24% 85%, rgba(50,100,220,0.3) 0%, transparent 8%),
+    radial-gradient(circle at 10% 72%, rgba(70,120,255,0.3) 0%, transparent 7%),
+    radial-gradient(circle at 5% 55%, rgba(50,100,220,0.28) 0%, transparent 8%),
+    radial-gradient(circle at 8% 38%, rgba(70,120,255,0.3) 0%, transparent 7%),
+    radial-gradient(circle at 20% 52%, rgba(50,100,220,0.2) 0%, transparent 9%),
+    radial-gradient(circle at 38% 45%, rgba(70,120,255,0.15) 0%, transparent 10%),
+    radial-gradient(circle at 55% 58%, rgba(50,100,220,0.18) 0%, transparent 9%),
+    radial-gradient(circle at 70% 42%, rgba(70,120,255,0.15) 0%, transparent 10%),
+    radial-gradient(circle at 75% 55%, rgba(50,100,220,0.2) 0%, transparent 9%);
+}
+
+/* Specular highlight — gives 3D sphere illusion */
+.blasto-sphere::after {
+  content: '';
+  position: absolute;
+  top: 8%; left: 15%;
+  width: 35%; height: 28%;
+  border-radius: 50%;
+  background: radial-gradient(ellipse at 40% 35%, rgba(160,200,255,0.25) 0%, rgba(100,160,255,0.08) 50%, transparent 100%);
+  transform: rotate(-20deg);
+}
+
+/* Blastocoele cavity — inner fluid-filled space */
+.blasto-cavity {
+  position: absolute;
+  top: 28%; left: 32%;
+  width: 52%; height: 50%;
+  border-radius: 50%;
+  background: radial-gradient(circle at 45% 45%, rgba(5,15,40,0.9) 0%, rgba(8,20,55,0.7) 60%, transparent 100%);
+  border: 1px solid rgba(40,80,180,0.2);
+}
+
+/* Inner cell mass — compact bright cluster at top-left like reference */
+.blasto-icm {
+  position: absolute;
+  top: 12%; left: 14%;
+  width: 34%; height: 32%;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 40% 38%, rgba(120,170,255,0.9) 0%, rgba(60,110,240,0.7) 40%, rgba(30,70,180,0.5) 70%, transparent 100%);
+  box-shadow:
+    0 0 20px rgba(75,127,245,0.4),
+    inset 0 0 15px rgba(150,190,255,0.2);
+}
+
+/* ICM individual blastomeres — textured cell cluster */
+.blasto-icm::before {
+  content: '';
+  position: absolute; inset: 0;
+  border-radius: 50%;
+  background-image:
+    radial-gradient(circle at 25% 30%, rgba(180,210,255,0.6) 0%, transparent 20%),
+    radial-gradient(circle at 55% 20%, rgba(150,190,255,0.5) 0%, transparent 18%),
+    radial-gradient(circle at 75% 40%, rgba(120,170,255,0.45) 0%, transparent 20%),
+    radial-gradient(circle at 60% 65%, rgba(100,150,240,0.4) 0%, transparent 18%),
+    radial-gradient(circle at 30% 65%, rgba(140,180,255,0.45) 0%, transparent 20%),
+    radial-gradient(circle at 45% 45%, rgba(160,200,255,0.3) 0%, transparent 25%);
+}
+
+/* Warm inner glow at ICM boundary */
+.blasto-icm::after {
+  content: '';
+  position: absolute; inset: -4px;
+  border-radius: 50%;
+  border: 2px solid rgba(75,127,245,0.3);
+  box-shadow: 0 0 12px rgba(75,127,245,0.25);
+}
+
+/* ── MISSION STRIP ── */
+.mission-strip { background: var(--bg-secondary); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+.mission-inner { max-width: var(--max-width); margin: 0 auto; padding: 5rem 2rem; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
+.mission-statement { font-family: var(--font-display); font-size: 1.55rem; line-height: 1.6; font-style: italic; }
+.mission-statement strong { color: var(--accent-light); font-style: normal; font-weight: 600; }
+.mission-questions { display: flex; flex-direction: column; gap: 1.2rem; }
+.mission-q { padding: 1.1rem 1.4rem; background: rgba(45,95,206,0.06); border-left: 3px solid var(--accent); border-radius: 0 8px 8px 0; font-size: 0.97rem; color: var(--text-secondary); line-height: 1.6; transition: all 0.3s ease; }
+.mission-q:hover { background: rgba(45,95,206,0.1); color: var(--text-primary); transform: translateX(4px); }
+
+/* ── SECTION BASE ── */
+.section { padding: 6rem 2rem; max-width: var(--max-width); margin: 0 auto; }
+.section-label { font-size: 0.78rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--accent-light); font-weight: 500; margin-bottom: 1rem; display: flex; align-items: center; gap: 0.75rem; }
+.section-label::before { content: ''; width: 24px; height: 1px; background: var(--accent); }
+.section-title { font-family: var(--font-display); font-size: clamp(2rem,4vw,2.8rem); font-weight: 600; line-height: 1.2; margin-bottom: 1rem; }
+.section-subtitle { color: var(--text-secondary); font-size: 1rem; max-width: 580px; line-height: 1.8; margin-bottom: 3rem; }
+
+/* ── THEMES PREVIEW ── */
+.themes-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.5rem; margin-bottom: 2.5rem; }
+.theme-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; padding: 2rem; transition: all 0.35s ease; }
+.theme-card:hover { background: var(--bg-card-hover); border-color: var(--border-light); transform: translateY(-4px); box-shadow: 0 12px 40px rgba(0,0,0,0.3); }
+.theme-number { font-size: 0.72rem; color: var(--accent-light); letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 0.75rem; }
+.theme-name { font-family: var(--font-display); font-size: 1.2rem; font-weight: 600; margin-bottom: 0.75rem; line-height: 1.3; }
+.theme-desc { font-size: 0.88rem; color: var(--text-secondary); line-height: 1.7; }
+
+/* ── QUICK LINKS ── */
+.quick-links { display: grid; grid-template-columns: repeat(4,1fr); gap: 1rem; margin-top: 5rem; }
+.quick-link-card { display: block; background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; padding: 1.75rem; text-decoration: none; transition: all 0.3s ease; }
+.quick-link-card:hover { border-color: var(--accent); transform: translateY(-3px); }
+.ql-label { font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent-light); margin-bottom: 0.5rem; }
+.ql-title { font-family: var(--font-display); font-size: 1.15rem; color: var(--text-primary); font-weight: 600; margin-bottom: 0.4rem; }
+.ql-desc { font-size: 0.82rem; color: var(--text-muted); }
+
+/* ── FOOTER ── */
+.footer { padding: 2.5rem 2rem; text-align: center; border-top: 1px solid var(--border); }
+.footer-text { font-size: 0.82rem; color: var(--text-muted); }
+.footer-links { display: flex; justify-content: center; gap: 2rem; margin-top: 0.75rem; }
+.footer-links a { font-size: 0.8rem; color: var(--text-muted); text-decoration: none; transition: color 0.2s; }
+.footer-links a:hover { color: var(--accent-light); }
+
+/* ── ANIMATIONS ── */
+.fade-in { opacity: 0; transform: translateY(28px); transition: all 0.7s cubic-bezier(0.16,1,0.3,1); }
+.fade-in.visible { opacity: 1; transform: translateY(0); }
+.stagger-1 { transition-delay: 0.1s; } .stagger-2 { transition-delay: 0.2s; } .stagger-3 { transition-delay: 0.3s; }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 1024px) {
+  .hero-content { grid-template-columns: 1fr; text-align: center; gap: 2rem; }
+  .hero-affil, .hero-btns { justify-content: center; }
+  .hero-visual { order: -1; }
+  .blasto-wrap { width: 260px; height: 260px; }
+  .mission-inner { grid-template-columns: 1fr; gap: 2.5rem; }
+  .themes-grid { grid-template-columns: 1fr 1fr; }
+  .quick-links { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 768px) {
+  .nav-links { display: none; }
+  .mobile-toggle { display: block; }
+  .nav-links.show { display: flex; flex-direction: column; position: fixed; top: var(--nav-height); left: 0; right: 0; background: rgba(6,8,15,0.97); padding: 1rem; border-bottom: 1px solid var(--border); }
+  .themes-grid, .quick-links { grid-template-columns: 1fr; }
+  .blasto-wrap { width: 220px; height: 220px; }
+  .hero-content { padding: 1.25rem; gap: 1.5rem; }
+  .hero-text h1 { font-size: 2.8rem; }
+  .hero-tagline { font-size: 1rem; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <svg width="36" height="36" viewBox="0 0 40 40" fill="none">
+        <defs>
+          <radialGradient id="lb" cx="48%" cy="48%" r="50%"><stop offset="0%" stop-color="#0a1830"/><stop offset="100%" stop-color="#04080f"/></radialGradient>
+          <radialGradient id="lc" cx="55%" cy="56%" r="50%"><stop offset="0%" stop-color="#091428" stop-opacity=".8"/><stop offset="100%" stop-color="#04080f" stop-opacity=".3"/></radialGradient>
+          <radialGradient id="li" cx="38%" cy="36%" r="58%"><stop offset="0%" stop-color="#4b7ff5" stop-opacity=".9"/><stop offset="100%" stop-color="#1a3a80" stop-opacity=".7"/></radialGradient>
+        </defs>
+        <circle cx="20" cy="20" r="19" stroke="#4b7ff5" stroke-width=".8" stroke-dasharray="3 1.5" fill="none" opacity=".45"/>
+        <circle cx="20" cy="20" r="17" fill="url(#lb)" stroke="#2d5fce" stroke-width="1"/>
+        <ellipse cx="22" cy="22" rx="9.5" ry="9" fill="url(#lc)" stroke="rgba(75,127,245,.18)" stroke-width=".5"/>
+        <ellipse cx="14.5" cy="15" rx="5.5" ry="5" fill="url(#li)" stroke="#4b7ff5" stroke-width=".7" opacity=".9"/>
+        <circle cx="13.5" cy="14" r="2" fill="#4b7ff5" opacity=".8"/><circle cx="16.5" cy="13.5" r="1.7" fill="#6a9af8" opacity=".7"/>
+        <circle cx="13" cy="17" r="1.6" fill="#4b7ff5" opacity=".7"/><circle cx="16" cy="16.5" r="1.5" fill="#2d5fce" opacity=".8"/>
+        <circle cx="20" cy="3.2" r="1.2" fill="#2d5fce" opacity=".55"/><circle cx="25.5" cy="4.8" r="1.1" fill="#4b7ff5" opacity=".5"/>
+        <circle cx="30.2" cy="9" r="1.1" fill="#2d5fce" opacity=".55"/><circle cx="33.5" cy="15" r="1" fill="#4b7ff5" opacity=".5"/>
+        <circle cx="34" cy="22" r="1.1" fill="#2d5fce" opacity=".55"/><circle cx="31" cy="28.5" r="1.1" fill="#4b7ff5" opacity=".5"/>
+        <circle cx="25" cy="33.5" r="1.2" fill="#2d5fce" opacity=".55"/><circle cx="18" cy="36" r="1.1" fill="#4b7ff5" opacity=".5"/>
+        <circle cx="11.5" cy="34" r="1.1" fill="#2d5fce" opacity=".55"/><circle cx="6.5" cy="29" r="1" fill="#4b7ff5" opacity=".5"/>
+        <circle cx="4" cy="22.5" r="1.1" fill="#2d5fce" opacity=".55"/><circle cx="5" cy="15.5" r="1" fill="#4b7ff5" opacity=".5"/>
+        <circle cx="9" cy="9.5" r="1.1" fill="#2d5fce" opacity=".55"/><circle cx="14.5" cy="5.5" r="1.1" fill="#4b7ff5" opacity=".5"/>
+      </svg>
+      <div class="nav-logo-text">Russell <span>Lab</span></div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="research.html">Research</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="publications.html">Publications</a></li>
+      <li><a href="team.html">Team</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <button class="mobile-toggle" onclick="document.querySelector('.nav-links').classList.toggle('show')">&#9776;</button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero" style="padding-top:var(--nav-height)">
+  <div class="hero-bg"></div>
+  <div class="hero-content">
+    <div class="hero-text">
+      <h1 class="fade-in">Russell<br><span class="accent">Research Lab</span></h1>
+      <p class="hero-tagline fade-in stagger-1">Decoding the molecular blueprint of human embryogenesis — from single-cell multi-omics to computational models of preimplantation development.</p>
+      <div class="hero-affil fade-in stagger-2">
+        <div class="hero-affil-item">Wilfrid Laurier University</div>
+        <div class="hero-affil-item">CReATe Fertility Centre</div>
+      </div>
+      <div class="hero-btns fade-in stagger-3">
+        <a href="research.html" class="btn btn-primary">Explore Research</a>
+        <a href="team.html" class="btn btn-outline">Meet the Team</a>
+      </div>
+    </div>
+    <div class="hero-visual fade-in stagger-2">
+     <div class="blasto-wrap">
+  <img src="veo.gif" alt="embryo development"
+    style="width:420px;height:420px;object-fit:cover;border-radius:50%;">
+</div>
+</div>
+
+    </div>
+  </div>
+</header>
+
+<!-- MISSION -->
+<div class="mission-strip">
+  <div class="mission-inner">
+    <div class="fade-in">
+      <p class="mission-statement">We seek to understand how a <strong>single fertilized cell</strong> orchestrates the complex molecular programs that build a human embryo — and why this process sometimes fails.</p>
+    </div>
+    <div class="mission-questions fade-in stagger-1">
+      <div class="mission-q">What molecular signatures distinguish embryos that will successfully implant from those that will not?</div>
+      <div class="mission-q">How do small non-coding RNAs regulate the earliest cell fate decisions in human development?</div>
+      <div class="mission-q">Can we build computational models that predict embryo developmental potential from multi-omic data?</div>
+      <div class="mission-q">What role does the endometrial environment play in recurrent implantation failure?</div>
+    </div>
+  </div>
+</div>
+
+<!-- RESEARCH THEMES PREVIEW -->
+<div class="section">
+  <div class="section-label fade-in">What We Study</div>
+  <h2 class="section-title fade-in">Research Themes</h2>
+  <p class="section-subtitle fade-in stagger-1">Our work sits at the intersection of reproductive biology, computational genomics, and clinical fertility.</p>
+  <div class="themes-grid">
+    <div class="theme-card fade-in stagger-1">
+      <div class="theme-number">Theme 01</div>
+      <div class="theme-name">Small RNA Biology in Early Embryos</div>
+      <p class="theme-desc">Mapping the small non-coding RNA landscape across human preimplantation development at single-cell resolution.</p>
+    </div>
+    <div class="theme-card fade-in stagger-2">
+      <div class="theme-number">Theme 02</div>
+      <div class="theme-name">The Digital Embryo</div>
+      <p class="theme-desc">Building predictive in silico models of human preimplantation development through multi-omic data integration.</p>
+    </div>
+    <div class="theme-card fade-in stagger-3">
+      <div class="theme-number">Theme 03</div>
+      <div class="theme-name">Endometrial Receptivity &amp; Implantation</div>
+      <p class="theme-desc">Investigating the molecular dialogue between embryo and endometrium, with a focus on recurrent implantation failure.</p>
+    </div>
+  </div>
+
+  <!-- QUICK LINKS -->
+  <div class="quick-links">
+    <a href="projects.html" class="quick-link-card fade-in stagger-1">
+      <div class="ql-label">Current Work</div>
+      <div class="ql-title">Research Projects</div>
+      <div class="ql-desc">Active projects spanning embryo transcriptomics, computational modeling, implantation biology and more.</div>
+    </a>
+    <a href="publications.html" class="quick-link-card fade-in stagger-2">
+      <div class="ql-label">Selected Works</div>
+      <div class="ql-title">Publications</div>
+      <div class="ql-desc">25+ peer-reviewed articles in Nature Communications, Human Reproduction, Scientific Reports, and more.</div>
+    </a>
+    <a href="team.html" class="quick-link-card fade-in stagger-3">
+      <div class="ql-label">Our People</div>
+      <div class="ql-title">The Team</div>
+      <div class="ql-desc">Meet Dr. Russell and the students driving research in the lab.</div>
+    </a>
+    <a href="contact.html" class="quick-link-card fade-in stagger-3">
+      <div class="ql-label">Get Involved</div>
+      <div class="ql-title">Join Us</div>
+      <div class="ql-desc">We're recruiting MSc and undergraduate students. Reach out to learn more.</div>
+    </a>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <p class="footer-text">&copy; 2026 Russell Research Lab — Wilfrid Laurier University</p>
+  <div class="footer-links">
+    <a href="index.html">Home</a><a href="research.html">Research</a><a href="projects.html">Projects</a>
+    <a href="publications.html">Publications</a><a href="team.html">Team</a><a href="contact.html">Contact</a>
+  </div>
+</footer>
+
+<script>
+const observer = new IntersectionObserver(e => e.forEach(x => { if(x.isIntersecting) x.target.classList.add('visible'); }), {threshold:0.1, rootMargin:'0px 0px -50px 0px'});
+document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>

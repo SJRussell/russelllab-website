@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Projects | Russell Research Lab</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300;1,9..40,400&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+:root{--bg-primary:#06080f;--bg-secondary:#0b0f1a;--bg-card:#0f1424;--bg-card-hover:#141a30;--accent:#2d5fce;--accent-light:#4b7ff5;--accent-subtle:#1a2d5a;--text-primary:#e8ecf4;--text-secondary:#8a94a8;--text-muted:#505a6e;--border:#1a2035;--border-light:#253050;--font-display:'Playfair Display',Georgia,serif;--font-body:'DM Sans',system-ui,sans-serif;--max-width:1200px;--nav-height:72px;}
+html{scroll-behavior:smooth;}body{font-family:var(--font-body);background:var(--bg-primary);color:var(--text-primary);line-height:1.7;overflow-x:hidden;}
+::selection{background:var(--accent);color:white;}
+::-webkit-scrollbar{width:6px;}::-webkit-scrollbar-track{background:var(--bg-primary);}::-webkit-scrollbar-thumb{background:var(--accent-subtle);border-radius:3px;}
+.nav{position:fixed;top:0;left:0;right:0;height:var(--nav-height);background:rgba(6,8,15,0.92);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);z-index:1000;display:flex;align-items:center;justify-content:center;}
+.nav-inner{width:100%;max-width:var(--max-width);padding:0 2rem;display:flex;align-items:center;justify-content:space-between;}
+.nav-logo{display:flex;align-items:center;gap:0.85rem;text-decoration:none;color:var(--text-primary);}
+.nav-logo-text{font-family:var(--font-display);font-size:1.15rem;font-weight:600;}.nav-logo-text span{color:var(--accent-light);}
+.nav-links{display:flex;align-items:center;gap:0.25rem;list-style:none;}
+.nav-links a{color:var(--text-secondary);text-decoration:none;font-size:0.88rem;padding:0.5rem 1rem;border-radius:6px;transition:all 0.25s ease;}
+.nav-links a:hover,.nav-links a.active{color:var(--text-primary);background:rgba(45,95,206,0.12);}
+.mobile-toggle{display:none;background:none;border:none;color:var(--text-primary);font-size:1.5rem;cursor:pointer;}
+.page-header{padding:calc(var(--nav-height) + 4rem) 2rem 4rem;background:var(--bg-secondary);border-bottom:1px solid var(--border);position:relative;overflow:hidden;}
+.page-header::before{content:'';position:absolute;top:-30%;right:-5%;width:500px;height:500px;background:radial-gradient(circle,rgba(45,95,206,0.08) 0%,transparent 70%);}
+.page-header-inner{max-width:var(--max-width);margin:0 auto;position:relative;z-index:1;}
+.section-label{font-size:0.78rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--accent-light);font-weight:500;margin-bottom:1rem;display:flex;align-items:center;gap:0.75rem;}
+.section-label::before{content:'';width:24px;height:1px;background:var(--accent);}
+.page-title{font-family:var(--font-display);font-size:clamp(2.5rem,5vw,4rem);font-weight:600;line-height:1.1;margin-bottom:1.25rem;}
+.page-subtitle{color:var(--text-secondary);font-size:1.05rem;max-width:620px;line-height:1.8;}
+.main{max-width:var(--max-width);margin:0 auto;padding:5rem 2rem;}
+.project{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start;margin-bottom:5rem;padding-bottom:5rem;border-bottom:1px solid var(--border);}
+.project:last-child{margin-bottom:0;padding-bottom:0;border-bottom:none;}
+.project:nth-child(even){direction:rtl;}.project:nth-child(even)>*{direction:ltr;}
+.project-number{font-family:var(--font-display);font-size:3.5rem;font-weight:700;color:var(--accent-subtle);line-height:1;margin-bottom:0.5rem;}
+.project-title{font-family:var(--font-display);font-size:1.6rem;font-weight:600;margin-bottom:0.5rem;line-height:1.3;}
+.project-student{font-size:0.88rem;color:var(--accent-light);margin-bottom:1.25rem;font-weight:500;}
+.project-desc{color:var(--text-secondary);font-size:0.95rem;line-height:1.8;margin-bottom:1.5rem;}
+.detail-label{font-size:0.75rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-muted);font-weight:500;margin-bottom:0.5rem;margin-top:1.25rem;}
+.project-questions{display:flex;flex-direction:column;gap:0.4rem;}
+.project-questions span{font-size:0.9rem;color:var(--text-secondary);padding-left:1rem;border-left:2px solid var(--accent-subtle);line-height:1.5;}
+.methods{display:flex;flex-wrap:wrap;gap:0.5rem;margin-top:0.5rem;}
+.method-tag{font-size:0.78rem;padding:0.3rem 0.75rem;background:rgba(45,95,206,0.1);border:1px solid var(--accent-subtle);border-radius:20px;color:var(--accent-light);}
+.project-image{aspect-ratio:4/3;background:linear-gradient(135deg,var(--bg-card),var(--accent-subtle));border-radius:12px;border:1px solid var(--border);display:flex;align-items:center;justify-content:center;overflow:hidden;}
+.project-image img{width:100%;height:100%;object-fit:cover;border-radius:12px;}
+.placeholder-label{text-align:center;color:var(--text-muted);font-size:0.82rem;letter-spacing:0.08em;text-transform:uppercase;padding:1rem;border:1px dashed var(--border-light);border-radius:8px;}
+.project-pub{margin-top:1.25rem;padding:1rem 1.25rem;background:rgba(45,95,206,0.05);border-radius:8px;border:1px solid var(--border);}
+.project-pub-label{font-size:0.72rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-muted);margin-bottom:0.4rem;}
+.project-pub-ref{font-size:0.85rem;color:var(--text-secondary);line-height:1.5;font-style:italic;}
+.footer{padding:2.5rem 2rem;text-align:center;border-top:1px solid var(--border);}
+.footer-text{font-size:0.82rem;color:var(--text-muted);}
+.footer-links{display:flex;justify-content:center;gap:2rem;margin-top:0.75rem;}
+.footer-links a{font-size:0.8rem;color:var(--text-muted);text-decoration:none;transition:color 0.2s;}
+.footer-links a:hover{color:var(--accent-light);}
+.fade-in{opacity:0;transform:translateY(28px);transition:all 0.7s cubic-bezier(0.16,1,0.3,1);}
+.fade-in.visible{opacity:1;transform:translateY(0);}
+@media(max-width:1024px){.project{grid-template-columns:1fr;}.project:nth-child(even){direction:ltr;}}
+@media(max-width:768px){.nav-links{display:none;}.mobile-toggle{display:block;}.nav-links.show{display:flex;flex-direction:column;position:fixed;top:var(--nav-height);left:0;right:0;background:rgba(6,8,15,0.97);padding:1rem;border-bottom:1px solid var(--border);}}
+</style>
+</head>
+<body>
+<nav class="nav"><div class="nav-inner">
+  <a href="index.html" class="nav-logo">
+    <svg width="36" height="36" viewBox="0 0 40 40" fill="none"><defs><radialGradient id="lb" cx="48%" cy="48%" r="50%"><stop offset="0%" stop-color="#0a1830"/><stop offset="100%" stop-color="#04080f"/></radialGradient><radialGradient id="lc" cx="55%" cy="56%" r="50%"><stop offset="0%" stop-color="#091428" stop-opacity=".8"/><stop offset="100%" stop-color="#04080f" stop-opacity=".3"/></radialGradient><radialGradient id="li" cx="38%" cy="36%" r="58%"><stop offset="0%" stop-color="#4b7ff5" stop-opacity=".9"/><stop offset="100%" stop-color="#1a3a80" stop-opacity=".7"/></radialGradient></defs><circle cx="20" cy="20" r="19" stroke="#4b7ff5" stroke-width=".8" stroke-dasharray="3 1.5" fill="none" opacity=".45"/><circle cx="20" cy="20" r="17" fill="url(#lb)" stroke="#2d5fce" stroke-width="1"/><ellipse cx="22" cy="22" rx="9.5" ry="9" fill="url(#lc)" stroke="rgba(75,127,245,.18)" stroke-width=".5"/><ellipse cx="14.5" cy="15" rx="5.5" ry="5" fill="url(#li)" stroke="#4b7ff5" stroke-width=".7" opacity=".9"/><circle cx="13.5" cy="14" r="2" fill="#4b7ff5" opacity=".8"/><circle cx="16.5" cy="13.5" r="1.7" fill="#6a9af8" opacity=".7"/><circle cx="13" cy="17" r="1.6" fill="#4b7ff5" opacity=".7"/><circle cx="16" cy="16.5" r="1.5" fill="#2d5fce" opacity=".8"/><circle cx="20" cy="3.2" r="1.2" fill="#2d5fce" opacity=".55"/><circle cx="25.5" cy="4.8" r="1.1" fill="#4b7ff5" opacity=".5"/><circle cx="30.2" cy="9" r="1.1" fill="#2d5fce" opacity=".55"/><circle cx="33.5" cy="15" r="1" fill="#4b7ff5" opacity=".5"/><circle cx="34" cy="22" r="1.1" fill="#2d5fce" opacity=".55"/><circle cx="31" cy="28.5" r="1.1" fill="#4b7ff5" opacity=".5"/><circle cx="25" cy="33.5" r="1.2" fill="#2d5fce" opacity=".55"/><circle cx="18" cy="36" r="1.1" fill="#4b7ff5" opacity=".5"/><circle cx="11.5" cy="34" r="1.1" fill="#2d5fce" opacity=".55"/><circle cx="6.5" cy="29" r="1" fill="#4b7ff5" opacity=".5"/><circle cx="4" cy="22.5" r="1.1" fill="#2d5fce" opacity=".55"/><circle cx="5" cy="15.5" r="1" fill="#4b7ff5" opacity=".5"/><circle cx="9" cy="9.5" r="1.1" fill="#2d5fce" opacity=".55"/><circle cx="14.5" cy="5.5" r="1.1" fill="#4b7ff5" opacity=".5"/></svg>
+    <div class="nav-logo-text">Russell <span>Lab</span></div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li><li><a href="research.html">Research</a></li>
+    <li><a href="projects.html" class="active">Projects</a></li><li><a href="publications.html">Publications</a></li>
+    <li><a href="team.html">Team</a></li><li><a href="contact.html">Contact</a></li>
+  </ul>
+  <button class="mobile-toggle" onclick="document.querySelector('.nav-links').classList.toggle('show')">&#9776;</button>
+</div></nav>
+
+<div class="page-header"><div class="page-header-inner">
+  <div class="section-label">Current Work</div>
+  <h1 class="page-title">Research Projects</h1>
+  <p class="page-subtitle">Each project contributes to our overarching goal of building a comprehensive molecular understanding of human embryo development and improving fertility care.</p>
+</div></div>
+
+<main class="main">
+
+  <!-- PROJECT 1 -->
+  <div class="project fade-in">
+    <div class="project-text">
+      <div class="project-number">01</div>
+      <h3 class="project-title">Transcriptomic Signatures of Recurrent Implantation Failure</h3>
+      <p class="project-student">Carly Keshen, MSc Candidate</p>
+      <p class="project-desc">Despite advances in IVF, recurrent implantation failure (RIF) remains one of the most frustrating challenges in reproductive medicine. This project uses transcriptomic analysis of endometrial tissue to identify molecular signatures that distinguish RIF patients from fertile controls, with the goal of developing clinically actionable biomarkers. Despite advances in IVF, recurrent implantation failure (RIF) remains one of the most frustrating challenges in reproductive medicine. This project uses transcriptomic analysis of endometrial tissue to identify molecular signatures that distinguish RIF patients from fertile controls, with the goal of developing clinically actionable biomarkers.
+</p>
+      <div class="detail-label">Major Questions</div>
+      <div class="project-questions">
+        <span>What gene expression patterns characterize the endometrium in RIF patients during the window of implantation?</span>
+        <span>Can transcriptomic classifiers predict implantation success and guide personalized treatment strategies?</span>
+        <span>How do meta-analytic approaches improve the robustness of endometrial biomarker discovery?</span>
+      </div>
+      <div class="detail-label">Methods</div>
+      <div class="methods">
+        <span class="method-tag">RNA Sequencing</span><span class="method-tag">Meta-analysis</span>
+        <span class="method-tag">Differential Expression</span><span class="method-tag">Machine Learning Classifiers</span><span class="method-tag">Clinical Validation</span>
+      </div>
+      <div class="project-pub">
+        <div class="project-pub-label">Related Publication</div>
+        <p class="project-pub-ref">Russell SJ et al. Autologous platelet-rich plasma improves the endometrial thickness and live birth rate in patients with recurrent implantation failure. <em>J Assist Reprod Genet</em>, 2022.</p>
+      </div>
+    </div>
+    <div class="project-image">
+      <!-- ADD IMAGE: <img src="your-image.jpg" alt="Endometrial transcriptomics"> -->
+      <div class="placeholder-label">Add project image<br><small style="opacity:0.6">e.g. endometrial histology</small></div>
+    </div>
+  </div>
+
+  <!-- PROJECT 2 -->
+  <div class="project fade-in">
+    <div class="project-text">
+      <div class="project-number">02</div>
+      <h3 class="project-title">The Digital Embryo: Predictive Multi-Omic Models</h3>
+      <p class="project-student">Dr. Stewart Russell, Principal Investigator</p>
+      <p class="project-desc">The Digital Embryo project aims to construct computational models that integrate multi-omic datasets — transcriptomics, epigenomics, chromatin accessibility — to predict embryo developmental trajectories. By unifying publicly available single-cell data with novel clinical samples, this initiative seeks to build the first comprehensive in silico model of human preimplantation development.</p>
+      <div class="detail-label">Major Questions</div>
+      <div class="project-questions">
+        <span>Can multi-omic data integration reveal cell fate decision mechanisms invisible to single-modality analysis?</span>
+        <span>How do epigenetic reprogramming dynamics predict developmental competence?</span>
+        <span>What computational frameworks best capture the temporal and molecular complexity of embryogenesis?</span>
+      </div>
+      <div class="detail-label">Methods</div>
+      <div class="methods">
+        <span class="method-tag">Single-cell Multi-omics</span><span class="method-tag">Data Integration (GLUE/fastMNN)</span>
+        <span class="method-tag">Optimal Transport</span><span class="method-tag">Trajectory Inference</span><span class="method-tag">Gene Regulatory Networks</span>
+      </div>
+      <div class="project-pub">
+        <div class="project-pub-label">Related Publication</div>
+        <p class="project-pub-ref">Russell SJ, Zhao C et al. An atlas of small non-coding RNAs in human preimplantation development. <em>Nature Communications</em>, 2024.</p>
+      </div>
+    </div>
+    <div class="project-image">
+      <!-- ADD IMAGE: <img src="your-image.jpg" alt="Computational pipeline"> -->
+      <div class="placeholder-label">Add project image<br><small style="opacity:0.6">e.g. UMAP / pipeline figure</small></div>
+    </div>
+  </div>
+
+  <!-- PROJECT 3 -->
+  <div class="project fade-in">
+    <div class="project-text">
+      <div class="project-number">03</div>
+      <h3 class="project-title">Single-Cell Transcriptomics of Aneuploid Embryo Development</h3>
+      <p class="project-student">Sheila (Yat Sze) Kwok, PhD Candidate</p>
+      <p class="project-desc">Aneuploidy is remarkably common in human embryos and a leading cause of implantation failure and pregnancy loss. This project uses single-cell transcriptomics of post-implantation human embryos to understand how aneuploid cells are depleted in mosaic embryos and how lineage dynamics are affected by chromosomal abnormalities.</p>
+      <div class="detail-label">Major Questions</div>
+      <div class="project-questions">
+        <span>What transcriptomic signatures distinguish aneuploid from euploid cells in mosaic human embryos?</span>
+        <span>How does the embryo selectively deplete aneuploid cells during early development?</span>
+        <span>What are the lineage-specific consequences of mosaicism for downstream development?</span>
+      </div>
+      <div class="detail-label">Methods</div>
+      <div class="methods">
+        <span class="method-tag">Single-cell RNA-seq</span><span class="method-tag">scDNA-seq</span>
+        <span class="method-tag">Extended Embryo Culture</span><span class="method-tag">Lineage Analysis</span><span class="method-tag">PGT-A</span>
+      </div>
+      <div class="project-pub">
+        <div class="project-pub-label">Related Publication</div>
+        <p class="project-pub-ref">Kwok SYS, Haham LM, Russell SJ et al. Single-cell transcriptomics of postimplantation embryos: unveiling aneuploidy effects and lineage dynamics. <em>Research Square</em>, 2025.</p>
+      </div>
+    </div>
+    <div class="project-image">
+      <!-- ADD IMAGE: <img src="your-image.jpg" alt="Blastocyst IF aneuploidy"> -->
+      <div class="placeholder-label">Add project image<br><small style="opacity:0.6">e.g. blastocyst IF / aneuploidy</small></div>
+    </div>
+  </div>
+
+  <!-- PROJECT 4 -->
+<div class="project fade-in">
+      <div class="project-text">
+        <div class="project-number">04</div>
+        <h3 class="project-title">Exploring Transposable Elements and Alternative Splicing Events as Drivers of Embryonic Development</h3>
+        <p class="project-student">Arsh Verma, HBSc Candidate</p>
+        <p class="project-desc">From a multi-omics perspective, the influence of Transposable Elements (TEs) and alternative splicing events (SEs) on preimplantation embryonic development remains ambiguous. In the Digital Embryo’s initial transcriptomic phase, I will analyze preimplantation single-cell RNA-sequencing datasets to generate reproducible feature matrices outlining TE activity (using SoloTE, a bioinformatics tool) and isoform/splicing dynamics (using Salmon and SUPPA2) across embryos that arrest versus those that develop successfully. The analysis will focus on the most robust and highly expressed TE classes, subfamilies, and loci, as well as key splicing events, helping to strengthen the predictive abilities of the Digital Embryo. Generated matrices containing common TE features and SEs (expressed via Percent Spliced-In values) will undergo quality control and metadata integration to support downstream comparison analysis with literature describing the functional roles of specific TEs and SEs.</p>
+        <div class="detail-label">Major Questions</div>
+        <div class="project-questions">
+          <span>Which transposable element subfamilies/loci and/or alternative splicing events are upregulated or downregulated in association with the successful development or arrest of preimplantation embryos?</span>
+          <span>Are there specific TE features or splicing events that occur at particular cell lineages, embryonic days, or developmental stages that are associated with embryonic arrest or successful growth trajectories? How so and why?</span>
+        </div>
+        <div class="detail-label">Methods</div>
+        <div class="methods">
+          <span class="method-tag">Computational Pipeline Building</span>
+          <span class="method-tag">Literature Review</span>
+          <span class="method-tag">Differential Expression</span>
+          <span class="method-tag">Alignments and QCs</span>
+          <span class="method-tag">Feature and Gene Quantifications</span>
+          <span class="method-tag">Seurat Analysis</span>
+          <span class="method-tag">Bioinformatics Tools for Transcriptomic Analysis</span>
+        </div>
+      </div>
+      <div class="project-image">
+        <img src="arsh-project-picture.png" alt="description" style="width:100%;height:100%;object-fit:contain;background:#06080f;">
+      </div>
+    </div>
+
+ <div class="project fade-in">
+      <div class="project-text">
+        <div class="project-number">05</div>
+        <h3 class="project-title">RNA Velocity Based Prediction of Embryo Progression and Arrest</h3>
+        <p class="project-student">Eitan Lenga, HBSc Candidate</p>
+        <p class="project-desc">I am building a reproducible RNA velocity pipeline for early human embryo single-cell RNA-seq datasets to infer developmental directionality from spliced vs. unspliced transcription. By integrating multiple public embryo datasets on the Nibi cluster, I generate Velocyto loom files and apply scVelo to estimate velocity fields, confidence metrics, and gene-level dynamics. I then compare “typical” developmental trajectories against cleavage-stage arrest phenotypes to identify where transcriptional progression diverges. The goal is to create a standardized workflow that supports cross-dataset comparisons and prioritizes candidate molecular signatures linked to embryo arrest.</p>
+        <div class="detail-label">Major Questions</div>
+        <div class="project-questions">
+          <span>How do inferred RNA velocity directionality and confidence differ between normally developing embryos and cleavage-stage arrested embryos?</span>
+          <span>Which genes show the strongest dynamic signatures (phase-portrait behaviour / velocity signal) during the embryo development, and how are these signatures altered in arrest subtypes?</span>
+          <span>Can velocity-derived metrics (e.g., velocity length, confidence, and transition structure) be used as quantitative features for comparing developmental progression across datasets and conditions?</span>
+        </div>
+        <div class="detail-label">Methods</div>
+        <div class="methods">
+          <span class="method-tag">Velocity (run-smartseq2) to generate spliced/unspliced counts as .loom files</span>
+          <span class="method-tag">Scanpy preprocessing (HVG selection, PCA, neighbours, UMAPs)</span>
+          <span class="method-tag">scVelo (stochastic model, velocity graph, confidence/length metrics)</span>
+        </div>
+      </div>
+      <div class="project-image">
+        <img src="UMAP-Image-eitan.jpg" alt="description">
+      </div>
+    </div>
+
+    <div class="project fade-in">
+      <div class="project-text">
+        <div class="project-number">06</div>
+        <h3 class="project-title">Automated Analysis of Embryo Development from Time-Lapse Imaging Using Deep Learning and Interactive Annotation Tools</h3>
+        <p class="project-student">Eric Chu, HBSc Candidate</p>
+        <p class="project-desc">My project aims to develop a convolutional neural network (CNN) pipeline for analyzing time-lapse image data of developing embryos. The pipeline will be able to process large image sequences to detect and classify important developmental events using a trained model. To support this pipeline, I have developed an interactive embryo viewer and annotation application to allow researchers to efficiently label key developmental stages and morphological features. The CNN pipeline and genetic data will be combined to create the Digital Embryo.</p>
+        <div class="detail-label">Major Questions</div>
+        <div class="project-questions">
+          <span>How can convolution neural networks be utilized to accurately identify key morphological events from embryo time-lapse imaging data to make predictions about embryo viability?</span>
+          <span>What key morphological features of developing embryos are most predictive of successful or unsuccessful developmental outcomes?</span>
+          <span>How can the CNN pipeline be scaled and integrated with genetic data to create the Digital Embryo?</span>
+        </div>
+        <div class="detail-label">Methods</div>
+        <div class="methods">
+          <span class="method-tag">Processing and annotating time-lapse imaging data</span>
+          <span class="method-tag">Deep learning models (FEMI and GRU)</span>
+          <span class="method-tag">Designing a custom embryo viewer and annotation application to support the CNN pipeline</span>
+        </div>
+      </div>
+      <div class="project-image">
+        <img src="eric-image.png" alt="description" style="width:100%;height:100%;object-fit:contain;">
+      </div>
+    </div>
+
+    <div class="project fade-in">
+      <div class="project-text">
+        <div class="project-number">07</div>
+        <h3 class="project-title">Building a Multi-Omic Atlas of Human Preimplantation Development and Embryonic Arrest</h3>
+        <p class="project-student">Matthew Shen, Incoming Freshman at University of Pennsylvania, Neuroscience Candidate</p>
+        <p class="project-desc">I am building a unified single-cell RNA-seq atlas of human preimplantation embryo development by reprocessing datasets through a standardized pipeline on the Nibi HPC cluster. Each dataset is aligned to the CHM13v2.0 reference genome using STAR, quantified with featureCounts and Salmon, and quality-controlled with BAM-level mitochondrial estimation, preserving high-mito cells that represent the arrest signal under study. By harmonizing metadata and applying consistent normalization across thousands of cells spanning zygote to blastocyst, I create a foundation for cross-dataset comparison of normal developmental trajectories against embryonic arrest. The goal is to classify distinct molecular failure modes and identify candidate regulatory drivers of why over half of IVF embryos fail to develop.</p>
+        <div class="detail-label">Major Questions</div>
+        <div class="project-questions">
+          <span>Where do arrested embryos diverge from normal developmental trajectories in transcriptomic space, and do distinct failure modes cluster into reproducible classes?</span>
+          <span>Which genes and regulatory programs distinguish successful embryonic genome activation from incomplete or failed activation in arrested embryos?</span>
+          <span>Can a uniformly reprocessed multi-dataset atlas reveal cross-study molecular signatures of arrest that individual datasets miss?</span>
+        </div>
+        <div class="detail-label">Methods</div>
+        <div class="methods">
+          <span class="method-tag">STAR alignment to CHM13v2.0 + featureCounts/Salmon quantification</span>
+          <span class="method-tag">Scran normalization, HVG selection, PCA, UMAP visualization</span>
+          <span class="method-tag">BAM-level mitochondrial % estimation (samtools idxstats) to preserve arrest signal</span>
+        </div>
+      </div>
+      <div class="project-image">
+        <img src="project-image-matthew.png" alt="description" style="width:100%;height:100%;object-fit:contain;background:#06080f;">
+      </div>
+    </div>
+
+    <div class="project fade-in">
+      <div class="project-text">
+        <div class="project-number">08</div>
+        <h3 class="project-title">Expressed Genetic Variant Analysis from Bulk RNA-seq in Recurrent Implantation Failure</h3>
+        <p class="project-student">Emmanuel Arzoumanidis, HBSc Candidate</p>
+        <p class="project-desc">My project uses bulk endometrial RNA-seq data to identify expressed genetic variants associated with recurrent implantation failure (RIF). I am repurposing these datasets to detect single nucleotide variants and small indels within expressed transcripts. I use a standardized bioinformatics approach to call, filter, annotate, and prioritize variants, then compare them against literature-supported RIF-associated variants. The goal is to determine whether expressed variants in implantation-related pathways may contribute to expression of the RIF-associated phenotype. </p>
+        <div class="detail-label">Major Questions</div>
+        <div class="project-questions">
+          <span>Can expressed genetic variants in the endometrium play a major role in contributing to recurrent implantation failure?</span>
+          <span>Which biological pathways are most strongly implicated by expressed variations detected in RIF, such as angiogenesis, immune regulation, methylation, and endometrial receptivity?</span>
+        </div>
+        <div class="detail-label">Methods</div>
+        <div class="methods">
+          <span class="method-tag">Quality control (FastQC, MultiQC)</span>
+          <span class="method-tag">Alignment (STAR)</span>
+          <span class="method-tag">RG addition and post-alignment processing (GATK)</span>
+          <span class="method-tag">Variant Calling and joint genotyping (GATK HalotypeCaller, CombineGVCFs)</span>
+          <span class="method-tag">Annotation (bcftools)</span>
+          <span class="method-tag">Genotype Analysis</span>
+        </div>
+      </div>
+      <div class="project-image">
+        <img src="emmanuel-project-image.png" alt="description" style="width:100%;height:100%;object-fit:contain;background:#06080f;">
+      </div>
+    </div>
+  <!--
+    ══ ADD A NEW PROJECT ══
+    Copy and paste this block above the closing </main> tag:
+
+    <div class="project fade-in">
+      <div class="project-text">
+        <div class="project-number">04</div>
+        <h3 class="project-title">Your Project Title</h3>
+        <p class="project-student">Student Name, Role</p>
+        <p class="project-desc">Description of the project...</p>
+        <div class="detail-label">Major Questions</div>
+        <div class="project-questions">
+          <span>Question 1</span>
+          <span>Question 2</span>
+        </div>
+        <div class="detail-label">Methods</div>
+        <div class="methods">
+          <span class="method-tag">Method 1</span>
+        </div>
+      </div>
+      <div class="project-image">
+        <img src="your-image.jpg" alt="description">
+      </div>
+    </div>
+  -->
+
+</main>
+
+<footer class="footer">
+  <p class="footer-text">&copy; 2026 Russell Research Lab — Wilfrid Laurier University</p>
+  <div class="footer-links">
+    <a href="index.html">Home</a><a href="research.html">Research</a><a href="projects.html">Projects</a>
+    <a href="publications.html">Publications</a><a href="team.html">Team</a><a href="contact.html">Contact</a>
+  </div>
+</footer>
+<script>
+const observer = new IntersectionObserver(e => e.forEach(x => { if(x.isIntersecting) x.target.classList.add('visible'); }), {threshold:0.1, rootMargin:'0px 0px -50px 0px'});
+document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
