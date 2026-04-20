@@ -4,43 +4,14 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Research | Russell Research Lab</title>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300;1,9..40,400&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+<meta name="description" content="Research themes of the Russell Research Lab: small RNA biology in embryos, the Digital Embryo multi-omic model, and endometrial receptivity and implantation failure.">
+<meta property="og:title" content="Research | Russell Research Lab">
+<meta property="og:description" content="Small RNA biology, the Digital Embryo, and endometrial receptivity.">
+<meta property="og:type" content="website">
+<link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300;1,9..40,400&family=Playfair+Display:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="css/main.css">
 <style>
-*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-:root {
-  --bg-primary: #06080f; --bg-secondary: #0b0f1a; --bg-card: #0f1424; --bg-card-hover: #141a30;
-  --accent: #2d5fce; --accent-light: #4b7ff5; --accent-subtle: #1a2d5a;
-  --text-primary: #e8ecf4; --text-secondary: #8a94a8; --text-muted: #505a6e;
-  --border: #1a2035; --border-light: #253050;
-  --font-display: 'Playfair Display', Georgia, serif; --font-body: 'DM Sans', system-ui, sans-serif;
-  --max-width: 1200px; --nav-height: 72px;
-}
-html { scroll-behavior: smooth; }
-body { font-family: var(--font-body); background: var(--bg-primary); color: var(--text-primary); line-height: 1.7; overflow-x: hidden; }
-::selection { background: var(--accent); color: white; }
-::-webkit-scrollbar { width: 6px; } ::-webkit-scrollbar-track { background: var(--bg-primary); }
-::-webkit-scrollbar-thumb { background: var(--accent-subtle); border-radius: 3px; }
-.nav { position: fixed; top: 0; left: 0; right: 0; height: var(--nav-height); background: rgba(6,8,15,0.92); backdrop-filter: blur(20px); border-bottom: 1px solid var(--border); z-index: 1000; display: flex; align-items: center; justify-content: center; }
-.nav-inner { width: 100%; max-width: var(--max-width); padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; }
-.nav-logo { display: flex; align-items: center; gap: 0.85rem; text-decoration: none; color: var(--text-primary); }
-.nav-logo-text { font-family: var(--font-display); font-size: 1.15rem; font-weight: 600; }
-.nav-logo-text span { color: var(--accent-light); }
-.nav-links { display: flex; align-items: center; gap: 0.25rem; list-style: none; }
-.nav-links a { color: var(--text-secondary); text-decoration: none; font-size: 0.88rem; padding: 0.5rem 1rem; border-radius: 6px; transition: all 0.25s ease; }
-.nav-links a:hover, .nav-links a.active { color: var(--text-primary); background: rgba(45,95,206,0.12); }
-.mobile-toggle { display: none; background: none; border: none; color: var(--text-primary); font-size: 1.5rem; cursor: pointer; }
-
-/* PAGE HEADER */
-.page-header { padding: calc(var(--nav-height) + 4rem) 2rem 4rem; background: var(--bg-secondary); border-bottom: 1px solid var(--border); position: relative; overflow: hidden; }
-.page-header::before { content: ''; position: absolute; top: -30%; right: -5%; width: 500px; height: 500px; background: radial-gradient(circle, rgba(45,95,206,0.08) 0%, transparent 70%); }
-.page-header-inner { max-width: var(--max-width); margin: 0 auto; position: relative; z-index: 1; }
-.section-label { font-size: 0.78rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--accent-light); font-weight: 500; margin-bottom: 1rem; display: flex; align-items: center; gap: 0.75rem; }
-.section-label::before { content: ''; width: 24px; height: 1px; background: var(--accent); }
-.page-title { font-family: var(--font-display); font-size: clamp(2.5rem,5vw,4rem); font-weight: 600; line-height: 1.1; margin-bottom: 1.25rem; }
-.page-subtitle { color: var(--text-secondary); font-size: 1.05rem; max-width: 620px; line-height: 1.8; }
-
-/* THEMES */
-.main { max-width: var(--max-width); margin: 0 auto; padding: 5rem 2rem; }
 .themes-detailed { display: flex; flex-direction: column; gap: 5rem; }
 .theme-block { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; padding-bottom: 5rem; border-bottom: 1px solid var(--border); }
 .theme-block:last-child { border-bottom: none; }
@@ -55,45 +26,34 @@ body { font-family: var(--font-body); background: var(--bg-primary); color: var(
 .theme-image { aspect-ratio: 4/3; background: linear-gradient(135deg, var(--bg-card), var(--accent-subtle)); border-radius: 12px; border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; overflow: hidden; }
 .theme-image img { width: 100%; height: 100%; object-fit: cover; border-radius: 12px; }
 .placeholder-label { text-align: center; color: var(--text-muted); font-size: 0.82rem; letter-spacing: 0.08em; text-transform: uppercase; padding: 1rem; border: 1px dashed var(--border-light); border-radius: 8px; }
-
-/* FOOTER */
-.footer { padding: 2.5rem 2rem; text-align: center; border-top: 1px solid var(--border); }
-.footer-text { font-size: 0.82rem; color: var(--text-muted); }
-.footer-links { display: flex; justify-content: center; gap: 2rem; margin-top: 0.75rem; }
-.footer-links a { font-size: 0.8rem; color: var(--text-muted); text-decoration: none; transition: color 0.2s; }
-.footer-links a:hover { color: var(--accent-light); }
-
-.fade-in { opacity: 0; transform: translateY(28px); transition: all 0.7s cubic-bezier(0.16,1,0.3,1); }
-.fade-in.visible { opacity: 1; transform: translateY(0); }
-.stagger-1 { transition-delay: 0.1s; }
-
-@media (max-width: 1024px) { .theme-block { grid-template-columns: 1fr; } .theme-block:nth-child(even) { direction: ltr; } }
-@media (max-width: 768px) { .nav-links { display: none; } .mobile-toggle { display: block; } .nav-links.show { display: flex; flex-direction: column; position: fixed; top: var(--nav-height); left: 0; right: 0; background: rgba(6,8,15,0.97); padding: 1rem; border-bottom: 1px solid var(--border); } }
+@media (max-width: 1024px) {
+  .theme-block { grid-template-columns: 1fr; }
+  .theme-block:nth-child(even) { direction: ltr; }
+}
 </style>
 </head>
 <body>
-<nav class="nav">
-  <div class="nav-inner">
-    <a href="index.html" class="nav-logo">
-      <svg width="36" height="36" viewBox="0 0 40 40" fill="none"><defs><radialGradient id="lb" cx="48%" cy="48%" r="50%"><stop offset="0%" stop-color="#0a1830"/><stop offset="100%" stop-color="#04080f"/></radialGradient><radialGradient id="lc" cx="55%" cy="56%" r="50%"><stop offset="0%" stop-color="#091428" stop-opacity=".8"/><stop offset="100%" stop-color="#04080f" stop-opacity=".3"/></radialGradient><radialGradient id="li" cx="38%" cy="36%" r="58%"><stop offset="0%" stop-color="#4b7ff5" stop-opacity=".9"/><stop offset="100%" stop-color="#1a3a80" stop-opacity=".7"/></radialGradient></defs><circle cx="20" cy="20" r="19" stroke="#4b7ff5" stroke-width=".8" stroke-dasharray="3 1.5" fill="none" opacity=".45"/><circle cx="20" cy="20" r="17" fill="url(#lb)" stroke="#2d5fce" stroke-width="1"/><ellipse cx="22" cy="22" rx="9.5" ry="9" fill="url(#lc)" stroke="rgba(75,127,245,.18)" stroke-width=".5"/><ellipse cx="14.5" cy="15" rx="5.5" ry="5" fill="url(#li)" stroke="#4b7ff5" stroke-width=".7" opacity=".9"/><circle cx="13.5" cy="14" r="2" fill="#4b7ff5" opacity=".8"/><circle cx="16.5" cy="13.5" r="1.7" fill="#6a9af8" opacity=".7"/><circle cx="13" cy="17" r="1.6" fill="#4b7ff5" opacity=".7"/><circle cx="16" cy="16.5" r="1.5" fill="#2d5fce" opacity=".8"/><circle cx="20" cy="3.2" r="1.2" fill="#2d5fce" opacity=".55"/><circle cx="25.5" cy="4.8" r="1.1" fill="#4b7ff5" opacity=".5"/><circle cx="30.2" cy="9" r="1.1" fill="#2d5fce" opacity=".55"/><circle cx="33.5" cy="15" r="1" fill="#4b7ff5" opacity=".5"/><circle cx="34" cy="22" r="1.1" fill="#2d5fce" opacity=".55"/><circle cx="31" cy="28.5" r="1.1" fill="#4b7ff5" opacity=".5"/><circle cx="25" cy="33.5" r="1.2" fill="#2d5fce" opacity=".55"/><circle cx="18" cy="36" r="1.1" fill="#4b7ff5" opacity=".5"/><circle cx="11.5" cy="34" r="1.1" fill="#2d5fce" opacity=".55"/><circle cx="6.5" cy="29" r="1" fill="#4b7ff5" opacity=".5"/><circle cx="4" cy="22.5" r="1.1" fill="#2d5fce" opacity=".55"/><circle cx="5" cy="15.5" r="1" fill="#4b7ff5" opacity=".5"/><circle cx="9" cy="9.5" r="1.1" fill="#2d5fce" opacity=".55"/><circle cx="14.5" cy="5.5" r="1.1" fill="#4b7ff5" opacity=".5"/></svg>
-      <div class="nav-logo-text">Russell <span>Lab</span></div>
-    </a>
-    <ul class="nav-links">
-      <li><a href="index.html">Home</a></li><li><a href="research.html" class="active">Research</a></li>
-      <li><a href="projects.html">Projects</a></li><li><a href="publications.html">Publications</a></li>
-      <li><a href="team.html">Team</a></li><li><a href="contact.html">Contact</a></li>
-    </ul>
-    <button class="mobile-toggle" onclick="document.querySelector('.nav-links').classList.toggle('show')">&#9776;</button>
-  </div>
-</nav>
+<nav class="nav"><div class="nav-inner">
+  <a href="index.html" class="nav-logo">
+    <img src="images/nav-logo.svg" alt="" width="36" height="36">
+    <div class="nav-logo-text">Russell <span>Lab</span></div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="research.html" class="active">Research</a></li>
+    <li><a href="projects.html">Projects</a></li>
+    <li><a href="publications.html">Publications</a></li>
+    <li><a href="team.html">Team</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <button class="mobile-toggle" onclick="document.querySelector('.nav-links').classList.toggle('show')">&#9776;</button>
+</div></nav>
 
-<div class="page-header">
-  <div class="page-header-inner">
-    <div class="section-label">What We Study</div>
-    <h1 class="page-title">Research Themes</h1>
-    <p class="page-subtitle">Our work sits at the intersection of reproductive biology, computational genomics, and clinical fertility — connecting molecular mechanisms to patient outcomes.</p>
-  </div>
-</div>
+<div class="page-header"><div class="page-header-inner">
+  <div class="section-label">What We Study</div>
+  <h1 class="page-title">Research Themes</h1>
+  <p class="page-subtitle">Our work sits at the intersection of reproductive biology, computational genomics, and clinical fertility — connecting molecular mechanisms to patient outcomes.</p>
+</div></div>
 
 <main class="main">
   <div class="themes-detailed">
@@ -110,7 +70,6 @@ body { font-family: var(--font-body); background: var(--bg-primary); color: var(
         </div>
       </div>
       <div class="theme-image">
-        <!-- ADD IMAGE: Replace with <img src="your-image.jpg" alt="sncRNA embryo"> -->
         <div class="placeholder-label">Add image here<br><small style="opacity:0.6">e.g. fluorescence confocal of embryo</small></div>
       </div>
     </div>
@@ -127,7 +86,6 @@ body { font-family: var(--font-body); background: var(--bg-primary); color: var(
         </div>
       </div>
       <div class="theme-image">
-        <!-- ADD IMAGE: <img src="your-image.jpg" alt="Computational model"> -->
         <div class="placeholder-label">Add image here<br><small style="opacity:0.6">e.g. UMAP or computational figure</small></div>
       </div>
     </div>
@@ -144,7 +102,6 @@ body { font-family: var(--font-body); background: var(--bg-primary); color: var(
         </div>
       </div>
       <div class="theme-image">
-        <!-- ADD IMAGE: <img src="your-image.jpg" alt="Endometrium"> -->
         <div class="placeholder-label">Add image here<br><small style="opacity:0.6">e.g. endometrial histology or organoid</small></div>
       </div>
     </div>
@@ -155,12 +112,17 @@ body { font-family: var(--font-body); background: var(--bg-primary); color: var(
 <footer class="footer">
   <p class="footer-text">&copy; 2026 Russell Research Lab — Wilfrid Laurier University</p>
   <div class="footer-links">
-    <a href="index.html">Home</a><a href="research.html">Research</a><a href="projects.html">Projects</a>
-    <a href="publications.html">Publications</a><a href="team.html">Team</a><a href="contact.html">Contact</a>
+    <a href="index.html">Home</a>
+    <a href="research.html">Research</a>
+    <a href="projects.html">Projects</a>
+    <a href="publications.html">Publications</a>
+    <a href="team.html">Team</a>
+    <a href="contact.html">Contact</a>
+    <a href="https://sjrussell.github.io/BioinfoCrashCourse/" target="_blank" rel="noopener">Bioinfo Tutorial</a>
   </div>
 </footer>
 <script>
-const observer = new IntersectionObserver(e => e.forEach(x => { if(x.isIntersecting) x.target.classList.add('visible'); }), {threshold:0.1, rootMargin:'0px 0px -50px 0px'});
+const observer = new IntersectionObserver(e => e.forEach(x => { if (x.isIntersecting) x.target.classList.add('visible'); }), { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
 document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 </script>
 </body>

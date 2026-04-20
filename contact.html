@@ -1,73 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Contact | Russell Research Lab</title>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300;1,9..40,400&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+<meta name="description" content="Join the Russell Research Lab at Wilfrid Laurier University. We welcome MSc, undergraduate, and collaborative enquiries in reproductive biology, multi-omics, and computational embryology.">
+<meta property="og:title" content="Contact | Russell Research Lab">
+<meta property="og:description" content="Join the Russell Research Lab at Wilfrid Laurier University.">
+<meta property="og:type" content="website">
+<link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300;1,9..40,400&family=Playfair+Display:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="css/main.css">
 <style>
-*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
-:root{--bg-primary:#06080f;--bg-secondary:#0b0f1a;--bg-card:#0f1424;--accent:#2d5fce;--accent-light:#4b7ff5;--accent-subtle:#1a2d5a;--text-primary:#e8ecf4;--text-secondary:#8a94a8;--text-muted:#505a6e;--border:#1a2035;--border-light:#253050;--font-display:'Playfair Display',Georgia,serif;--font-body:'DM Sans',system-ui,sans-serif;--max-width:1200px;--nav-height:72px;}
-html{scroll-behavior:smooth;}body{font-family:var(--font-body);background:var(--bg-primary);color:var(--text-primary);line-height:1.7;overflow-x:hidden;}
-::selection{background:var(--accent);color:white;}
-::-webkit-scrollbar{width:6px;}::-webkit-scrollbar-track{background:var(--bg-primary);}::-webkit-scrollbar-thumb{background:var(--accent-subtle);border-radius:3px;}
-.nav{position:fixed;top:0;left:0;right:0;height:var(--nav-height);background:rgba(6,8,15,0.92);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);z-index:1000;display:flex;align-items:center;justify-content:center;}
-.nav-inner{width:100%;max-width:var(--max-width);padding:0 2rem;display:flex;align-items:center;justify-content:space-between;}
-.nav-logo{display:flex;align-items:center;gap:0.85rem;text-decoration:none;color:var(--text-primary);}
-.nav-logo-text{font-family:var(--font-display);font-size:1.15rem;font-weight:600;}.nav-logo-text span{color:var(--accent-light);}
-.nav-links{display:flex;align-items:center;gap:0.25rem;list-style:none;}
-.nav-links a{color:var(--text-secondary);text-decoration:none;font-size:0.88rem;padding:0.5rem 1rem;border-radius:6px;transition:all 0.25s ease;}
-.nav-links a:hover,.nav-links a.active{color:var(--text-primary);background:rgba(45,95,206,0.12);}
-.mobile-toggle{display:none;background:none;border:none;color:var(--text-primary);font-size:1.5rem;cursor:pointer;}
-.page-header{padding:calc(var(--nav-height) + 4rem) 2rem 4rem;background:var(--bg-secondary);border-bottom:1px solid var(--border);position:relative;overflow:hidden;}
-.page-header::before{content:'';position:absolute;top:-30%;right:-5%;width:500px;height:500px;background:radial-gradient(circle,rgba(45,95,206,0.08) 0%,transparent 70%);}
-.page-header-inner{max-width:var(--max-width);margin:0 auto;position:relative;z-index:1;}
-.section-label{font-size:0.78rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--accent-light);font-weight:500;margin-bottom:1rem;display:flex;align-items:center;gap:0.75rem;}
-.section-label::before{content:'';width:24px;height:1px;background:var(--accent);}
-.page-title{font-family:var(--font-display);font-size:clamp(2.5rem,5vw,4rem);font-weight:600;line-height:1.1;margin-bottom:1.25rem;}
-.page-subtitle{color:var(--text-secondary);font-size:1.05rem;max-width:620px;line-height:1.8;}
-.main{max-width:var(--max-width);margin:0 auto;padding:5rem 2rem;}
-.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start;}
-.contact-cta h2{font-family:var(--font-display);font-size:2rem;font-weight:600;margin-bottom:1rem;}
-.contact-cta p{color:var(--text-secondary);font-size:0.97rem;line-height:1.85;margin-bottom:1.5rem;}
-.contact-link{display:inline-flex;align-items:center;gap:0.5rem;color:var(--accent-light);text-decoration:none;font-size:0.95rem;font-weight:500;padding:0.75rem 1.75rem;border:1px solid var(--accent);border-radius:8px;transition:all 0.3s ease;}
-.contact-link:hover{background:rgba(45,95,206,0.15);transform:translateY(-2px);}
-.contact-cards{display:flex;flex-direction:column;gap:1.25rem;}
-.contact-card{padding:1.5rem;background:var(--bg-card);border:1px solid var(--border);border-radius:10px;}
-.contact-card h4{font-size:0.75rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-muted);font-weight:500;margin-bottom:0.5rem;}
-.contact-card p{color:var(--text-secondary);font-size:0.95rem;line-height:1.7;}
-.contact-card a{color:var(--accent-light);text-decoration:none;}
-.contact-card a:hover{text-decoration:underline;}
-.what-we-seek{margin-top:5rem;padding-top:5rem;border-top:1px solid var(--border);}
-.what-we-seek h2{font-family:var(--font-display);font-size:2rem;font-weight:600;margin-bottom:1rem;}
-.what-we-seek p{color:var(--text-secondary);font-size:0.97rem;line-height:1.85;max-width:700px;margin-bottom:2rem;}
-.seek-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;}
-.seek-card{background:var(--bg-card);border:1px solid var(--border);border-radius:10px;padding:1.75rem;transition:all 0.3s ease;}
-.seek-card:hover{border-color:var(--accent);transform:translateY(-3px);}
-.seek-icon{font-size:1.5rem;margin-bottom:1rem;}
-.seek-title{font-family:var(--font-display);font-size:1.1rem;font-weight:600;margin-bottom:0.5rem;}
-.seek-desc{font-size:0.87rem;color:var(--text-secondary);line-height:1.7;}
-.footer{padding:2.5rem 2rem;text-align:center;border-top:1px solid var(--border);margin-top:5rem;}
-.footer-text{font-size:0.82rem;color:var(--text-muted);}
-.footer-links{display:flex;justify-content:center;gap:2rem;margin-top:0.75rem;}
-.footer-links a{font-size:0.8rem;color:var(--text-muted);text-decoration:none;transition:color 0.2s;}
-.footer-links a:hover{color:var(--accent-light);}
-.fade-in{opacity:0;transform:translateY(28px);transition:all 0.7s cubic-bezier(0.16,1,0.3,1);}
-.fade-in.visible{opacity:1;transform:translateY(0);}
-.stagger-1{transition-delay:0.1s;}.stagger-2{transition-delay:0.2s;}.stagger-3{transition-delay:0.3s;}
-@media(max-width:1024px){.contact-grid{grid-template-columns:1fr;gap:3rem;}.seek-grid{grid-template-columns:1fr 1fr;}}
-@media(max-width:768px){.nav-links{display:none;}.mobile-toggle{display:block;}.nav-links.show{display:flex;flex-direction:column;position:fixed;top:var(--nav-height);left:0;right:0;background:rgba(6,8,15,0.97);padding:1rem;border-bottom:1px solid var(--border);}.seek-grid{grid-template-columns:1fr;}}
+.contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start; }
+.contact-cta h2 { font-family: var(--font-display); font-size: 2rem; font-weight: 600; margin-bottom: 1rem; }
+.contact-cta p { color: var(--text-secondary); font-size: 0.97rem; line-height: 1.85; margin-bottom: 1.5rem; }
+.contact-link { display: inline-flex; align-items: center; gap: 0.5rem; color: var(--accent-light); text-decoration: none; font-size: 0.95rem; font-weight: 500; padding: 0.75rem 1.75rem; border: 1px solid var(--accent); border-radius: 8px; transition: all 0.3s ease; }
+.contact-link:hover { background: rgba(45,95,206,0.15); transform: translateY(-2px); }
+.contact-cards { display: flex; flex-direction: column; gap: 1.25rem; }
+.contact-card { padding: 1.5rem; background: var(--bg-card); border: 1px solid var(--border); border-radius: 10px; }
+.contact-card h4 { font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-muted); font-weight: 500; margin-bottom: 0.5rem; }
+.contact-card p { color: var(--text-secondary); font-size: 0.95rem; line-height: 1.7; }
+.contact-card a { color: var(--accent-light); text-decoration: none; }
+.contact-card a:hover { text-decoration: underline; }
+.what-we-seek { margin-top: 5rem; padding-top: 5rem; border-top: 1px solid var(--border); }
+.what-we-seek h2 { font-family: var(--font-display); font-size: 2rem; font-weight: 600; margin-bottom: 1rem; }
+.what-we-seek p { color: var(--text-secondary); font-size: 0.97rem; line-height: 1.85; max-width: 700px; margin-bottom: 2rem; }
+.seek-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+.seek-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 10px; padding: 1.75rem; transition: all 0.3s ease; }
+.seek-card:hover { border-color: var(--accent); transform: translateY(-3px); }
+.seek-icon { font-size: 1.5rem; margin-bottom: 1rem; }
+.seek-title { font-family: var(--font-display); font-size: 1.1rem; font-weight: 600; margin-bottom: 0.5rem; }
+.seek-desc { font-size: 0.87rem; color: var(--text-secondary); line-height: 1.7; }
+@media (max-width: 1024px) { .contact-grid { grid-template-columns: 1fr; gap: 3rem; } .seek-grid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 768px) { .seek-grid { grid-template-columns: 1fr; } }
 </style>
 </head>
 <body>
 <nav class="nav"><div class="nav-inner">
   <a href="index.html" class="nav-logo">
-    <svg width="36" height="36" viewBox="0 0 40 40" fill="none"><defs><radialGradient id="lb" cx="48%" cy="48%" r="50%"><stop offset="0%" stop-color="#0a1830"/><stop offset="100%" stop-color="#04080f"/></radialGradient><radialGradient id="lc" cx="55%" cy="56%" r="50%"><stop offset="0%" stop-color="#091428" stop-opacity=".8"/><stop offset="100%" stop-color="#04080f" stop-opacity=".3"/></radialGradient><radialGradient id="li" cx="38%" cy="36%" r="58%"><stop offset="0%" stop-color="#4b7ff5" stop-opacity=".9"/><stop offset="100%" stop-color="#1a3a80" stop-opacity=".7"/></radialGradient></defs><circle cx="20" cy="20" r="19" stroke="#4b7ff5" stroke-width=".8" stroke-dasharray="3 1.5" fill="none" opacity=".45"/><circle cx="20" cy="20" r="17" fill="url(#lb)" stroke="#2d5fce" stroke-width="1"/><ellipse cx="22" cy="22" rx="9.5" ry="9" fill="url(#lc)" stroke="rgba(75,127,245,.18)" stroke-width=".5"/><ellipse cx="14.5" cy="15" rx="5.5" ry="5" fill="url(#li)" stroke="#4b7ff5" stroke-width=".7" opacity=".9"/><circle cx="13.5" cy="14" r="2" fill="#4b7ff5" opacity=".8"/><circle cx="16.5" cy="13.5" r="1.7" fill="#6a9af8" opacity=".7"/><circle cx="13" cy="17" r="1.6" fill="#4b7ff5" opacity=".7"/><circle cx="16" cy="16.5" r="1.5" fill="#2d5fce" opacity=".8"/><circle cx="20" cy="3.2" r="1.2" fill="#2d5fce" opacity=".55"/><circle cx="25.5" cy="4.8" r="1.1" fill="#4b7ff5" opacity=".5"/><circle cx="30.2" cy="9" r="1.1" fill="#2d5fce" opacity=".55"/><circle cx="33.5" cy="15" r="1" fill="#4b7ff5" opacity=".5"/><circle cx="34" cy="22" r="1.1" fill="#2d5fce" opacity=".55"/><circle cx="31" cy="28.5" r="1.1" fill="#4b7ff5" opacity=".5"/><circle cx="25" cy="33.5" r="1.2" fill="#2d5fce" opacity=".55"/><circle cx="18" cy="36" r="1.1" fill="#4b7ff5" opacity=".5"/><circle cx="11.5" cy="34" r="1.1" fill="#2d5fce" opacity=".55"/><circle cx="6.5" cy="29" r="1" fill="#4b7ff5" opacity=".5"/><circle cx="4" cy="22.5" r="1.1" fill="#2d5fce" opacity=".55"/><circle cx="5" cy="15.5" r="1" fill="#4b7ff5" opacity=".5"/><circle cx="9" cy="9.5" r="1.1" fill="#2d5fce" opacity=".55"/><circle cx="14.5" cy="5.5" r="1.1" fill="#4b7ff5" opacity=".5"/></svg>
+    <img src="images/nav-logo.svg" alt="" width="36" height="36">
     <div class="nav-logo-text">Russell <span>Lab</span></div>
   </a>
   <ul class="nav-links">
-    <li><a href="index.html">Home</a></li><li><a href="research.html">Research</a></li>
-    <li><a href="projects.html">Projects</a></li><li><a href="publications.html">Publications</a></li>
-    <li><a href="team.html">Team</a></li><li><a href="contact.html" class="active">Contact</a></li>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="research.html">Research</a></li>
+    <li><a href="projects.html">Projects</a></li>
+    <li><a href="publications.html">Publications</a></li>
+    <li><a href="team.html">Team</a></li>
+    <li><a href="contact.html" class="active">Contact</a></li>
   </ul>
   <button class="mobile-toggle" onclick="document.querySelector('.nav-links').classList.toggle('show')">&#9776;</button>
 </div></nav>
@@ -84,13 +65,13 @@ html{scroll-behavior:smooth;}body{font-family:var(--font-body);background:var(--
       <h2>Interested in joining the lab?</h2>
       <p>We are actively recruiting MSc and undergraduate research students with interests in computational biology, reproductive science, bioinformatics, or multi-omics data analysis. Prior experience in molecular biology or programming (R/Python) is an asset but not required — we value curiosity and determination above all.</p>
       <p>If you are a potential collaborator or have a question about our research, we'd love to hear from you too.</p>
-      <a href="https://wlu.ca1.qualtrics.com/jfe/form/SV_3DUtof3Wim0lqWa" target="_blank" class="contact-link">Contact the lab →</a>
+      <a href="https://wlu.ca1.qualtrics.com/jfe/form/SV_3DUtof3Wim0lqWa" target="_blank" rel="noopener" class="contact-link">Contact the lab →</a>
     </div>
     <div class="contact-cards fade-in stagger-1">
       <div class="contact-card">
-  <h4>Contact Form</h4>
-  <p><a href="https://wlu.ca1.qualtrics.com/jfe/form/SV_3DUtof3Wim0lqWa" target="_blank" style="color:var(--accent-light);text-decoration:none;">Fill out our contact form</a></p>
-</div>
+        <h4>Contact Form</h4>
+        <p><a href="https://wlu.ca1.qualtrics.com/jfe/form/SV_3DUtof3Wim0lqWa" target="_blank" rel="noopener">Fill out our contact form</a></p>
+      </div>
       <div class="contact-card">
         <h4>Location</h4>
         <p>Department of Health Sciences<br>Wilfrid Laurier University<br>75 University Ave W<br>Waterloo, Ontario, N2L 3C5, Canada</p>
@@ -128,12 +109,17 @@ html{scroll-behavior:smooth;}body{font-family:var(--font-body);background:var(--
 <footer class="footer">
   <p class="footer-text">&copy; 2026 Russell Research Lab — Wilfrid Laurier University</p>
   <div class="footer-links">
-    <a href="index.html">Home</a><a href="research.html">Research</a><a href="projects.html">Projects</a>
-    <a href="publications.html">Publications</a><a href="team.html">Team</a><a href="contact.html">Contact</a>
+    <a href="index.html">Home</a>
+    <a href="research.html">Research</a>
+    <a href="projects.html">Projects</a>
+    <a href="publications.html">Publications</a>
+    <a href="team.html">Team</a>
+    <a href="contact.html">Contact</a>
+    <a href="https://sjrussell.github.io/BioinfoCrashCourse/" target="_blank" rel="noopener">Bioinfo Tutorial</a>
   </div>
 </footer>
 <script>
-const observer = new IntersectionObserver(e => e.forEach(x => { if(x.isIntersecting) x.target.classList.add('visible'); }), {threshold:0.1, rootMargin:'0px 0px -50px 0px'});
+const observer = new IntersectionObserver(e => e.forEach(x => { if (x.isIntersecting) x.target.classList.add('visible'); }), { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
 document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 </script>
 </body>
