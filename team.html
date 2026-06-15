@@ -4,15 +4,16 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Team | Russell Research Lab</title>
-<meta name="description" content="Meet the Russell Research Lab team — PI, graduate and undergraduate researchers working on preimplantation embryo development, small RNA biology, and endometrial receptivity.">
+<meta name="description" content="Meet the Russell Research Lab team at Wilfrid Laurier University, including graduate students, undergraduate researchers, co-op trainees, and collaborators building the Digital Embryo.">
 <meta property="og:title" content="Team | Russell Research Lab">
-<meta property="og:description" content="Meet the Russell Research Lab team.">
+<meta property="og:description" content="Current members and alumni of the Russell Research Lab.">
 <meta property="og:type" content="website">
+<meta property="og:image" content="https://russelllab.ca/images/project-digital-embryo.png">
+<link rel="canonical" href="https://russelllab.ca/team.html">
 <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300;1,9..40,400&family=Playfair+Display:wght@400;500;600;700&display=swap">
 <link rel="stylesheet" href="css/main.css">
 <style>
-/* PI FEATURED */
 .pi-featured{display:grid;grid-template-columns:320px 1fr;gap:4rem;align-items:start;padding-bottom:5rem;border-bottom:1px solid var(--border);margin-bottom:5rem;}
 .pi-photo-wrap{position:sticky;top:calc(var(--nav-height) + 2rem);}
 .pi-photo{width:100%;aspect-ratio:3/4;border-radius:12px;border:1px solid var(--border);overflow:hidden;background:linear-gradient(135deg,var(--bg-card),var(--accent-subtle));}
@@ -21,17 +22,20 @@
 .pi-photo-role{font-size:0.8rem;color:var(--accent-light);text-align:center;margin-top:0.25rem;}
 .pi-info h2{font-family:var(--font-display);font-size:2.2rem;font-weight:600;margin-bottom:0.5rem;}
 .pi-title-text{color:var(--accent-light);font-size:0.95rem;margin-bottom:1.75rem;line-height:1.6;}
-.pi-bio{color:var(--text-secondary);font-size:0.97rem;line-height:1.85;margin-bottom:2rem;}
+.pi-bio{color:var(--text-secondary);font-size:0.97rem;line-height:1.85;margin-bottom:1.4rem;}
+.pi-links{display:flex;flex-wrap:wrap;gap:0.75rem;margin:1.75rem 0 2rem;}
+.pi-links a{color:var(--accent-light);text-decoration:none;border:1px solid var(--accent-subtle);border-radius:8px;padding:0.55rem 0.85rem;font-size:0.84rem;}
+.pi-links a:hover{border-color:var(--accent);background:rgba(45,95,206,0.1);}
 .pi-subsection{margin-bottom:2rem;}
 .pi-sub-title{font-size:0.78rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--text-muted);font-weight:500;margin-bottom:1rem;padding-bottom:0.5rem;border-bottom:1px solid var(--border);}
 .award-row{display:grid;grid-template-columns:64px 1fr;gap:1rem;margin-bottom:0.9rem;align-items:baseline;}
 .award-yr{font-size:0.82rem;color:var(--accent-light);font-weight:500;}
 .award-txt{font-size:0.88rem;color:var(--text-secondary);line-height:1.6;}
 .award-txt strong{color:var(--text-primary);font-weight:500;}
-
-/* TEAM GRID */
+.team-section{margin-top:4rem;}
+.team-section:first-of-type{margin-top:0;}
 .team-section-title{font-family:var(--font-display);font-size:1.8rem;font-weight:600;margin-bottom:0.5rem;}
-.team-section-sub{color:var(--text-secondary);font-size:0.97rem;margin-bottom:2.5rem;}
+.team-section-sub{color:var(--text-secondary);font-size:0.97rem;margin-bottom:2.5rem;max-width:760px;line-height:1.7;}
 .team-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:1.5rem;}
 .member-card{background:var(--bg-card);border:1px solid var(--border);border-radius:12px;overflow:hidden;transition:all 0.35s ease;}
 .member-card:hover{border-color:var(--border-light);transform:translateY(-3px);box-shadow:0 8px 30px rgba(0,0,0,0.25);}
@@ -40,15 +44,11 @@
 .placeholder-label{text-align:center;color:var(--text-muted);font-size:0.75rem;letter-spacing:0.08em;text-transform:uppercase;padding:0.75rem;border:1px dashed var(--border-light);border-radius:8px;}
 .member-info{padding:1.25rem;}
 .member-name{font-family:var(--font-display);font-size:1.1rem;font-weight:600;margin-bottom:0.25rem;}
-.member-role{font-size:0.8rem;color:var(--accent-light);font-weight:500;margin-bottom:0.6rem;}
+.member-role{font-size:0.8rem;color:var(--accent-light);font-weight:500;margin-bottom:0.6rem;line-height:1.5;}
 .member-desc{font-size:0.85rem;color:var(--text-secondary);line-height:1.6;}
-
-@media (max-width: 1024px) {
-  .pi-featured { grid-template-columns: 1fr; }
-  .pi-photo-wrap { position: static; max-width: 280px; }
-}
-@media (max-width: 768px) { .team-grid { grid-template-columns: repeat(2, 1fr); } }
-@media (max-width: 480px) { .team-grid { grid-template-columns: 1fr; } }
+@media (max-width: 1024px){.pi-featured{grid-template-columns:1fr}.pi-photo-wrap{position:static;max-width:280px}}
+@media (max-width: 768px){.team-grid{grid-template-columns:repeat(2,1fr)}}
+@media (max-width: 480px){.team-grid{grid-template-columns:1fr}.pi-links{flex-direction:column}.pi-links a{text-align:center}}
 </style>
 </head>
 <body>
@@ -71,17 +71,13 @@
 <div class="page-header"><div class="page-header-inner">
   <div class="section-label">Our People</div>
   <h1 class="page-title">The Team</h1>
-  <p class="page-subtitle">A collaborative group united by curiosity about the earliest stages of human development.</p>
+  <p class="page-subtitle">A collaborative group building molecular and computational models of human preimplantation development.</p>
 </div></div>
 
 <main class="main">
-
-  <!-- DR. RUSSELL FEATURED -->
   <div class="pi-featured fade-in">
     <div class="pi-photo-wrap">
-      <div class="pi-photo">
-        <img src="images/stewart-russell.jpg" alt="Dr. Stewart J. Russell">
-      </div>
+      <div class="pi-photo"><img src="images/stewart-russell.jpg" alt="Dr. Stewart J. Russell"></div>
       <div class="pi-photo-name">Dr. Stewart J. Russell</div>
       <div class="pi-photo-role">Principal Investigator</div>
     </div>
@@ -92,191 +88,122 @@
         Department of Health Sciences, Wilfrid Laurier University<br>
         Affiliation Scientist, CReATe Fertility Centre
       </p>
-      <p class="pi-bio">Dr. Stewart J. Russell is an Assistant Professor of Molecular and Medical Health Sciences at Wilfrid Laurier University, commencing August 1, 2025. He completed his PhD in 2016 at the University of Guelph, where he pioneered work on small RNA biology in bovine oocytes and early embryos. Following his PhD, he spent nearly a decade directing translational studies addressing infertility at the CReATe Fertility Centre, where he led research programs spanning single-cell RNA profiling of human embryos (days 3–12), molecular interactions between embryos and endometrium, multiomic analysis of endometrial receptivity, and epigenetic studies of sperm-borne RNAs.</p>
-      <p class="pi-bio">His work leverages small RNA biology, multi-omics analysis, and embryo micromanipulation to develop diagnostic and therapeutic strategies for infertility and early embryo health. He has collaborated on multiple large initiatives to advance the field of ARTs, including novel research on sperm-borne RNAs and endometrial receptivity. Dr. Russell also mentors graduate students and lectures internationally on reproductive biology and precision fertility care.</p>
-
+      <p class="pi-bio">Dr. Stewart J. Russell is an Assistant Professor of Molecular and Medical Health Sciences at Wilfrid Laurier University. He completed his PhD in Biomedical Science at the University of Guelph, where he studied small RNA biology in oocytes and early embryos. Before joining Laurier, he spent nearly a decade directing translational reproductive biology research at CReATe Fertility Centre.</p>
+      <p class="pi-bio">The lab combines reproductive biology, single-cell genomics, multi-omic integration, and clinical fertility research to understand why some embryos progress and others arrest. Current work centers on the Digital Embryo, an integrated atlas and predictive model of human preimplantation development.</p>
+      <div class="pi-links">
+        <a href="https://www.wlu.ca/academics/faculties/faculty-of-science/faculty-profiles/stewart-russell/index.html" target="_blank" rel="noopener">WLU profile</a>
+        <a href="https://scholar.google.com/citations?hl=en&user=nH2WfJcAAAAJ" target="_blank" rel="noopener">Google Scholar</a>
+        <a href="https://ca.linkedin.com/in/stewart-russell-68a69a59" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
       <div class="pi-subsection">
         <div class="pi-sub-title">Selected Awards &amp; Funding</div>
-        <div class="award-row"><span class="award-yr">2025</span><span class="award-txt"><strong>CGS-M Scholarship</strong> — Project Supervisor. "Unveiling the Molecular Signature of Recurrent Implantation Failure." Grantee: Carly Keshen. <em style="color:var(--accent-light)">$27,000</em></span></div>
-        <div class="award-row"><span class="award-yr">2022</span><span class="award-txt"><strong>CIHR Project Grant</strong> — Collaborator. "Identification of functional epigenomic regions in sperm." PI: S. Kimmins. <em style="color:var(--accent-light)">$879,000</em></span></div>
-        <div class="award-row"><span class="award-yr">2021</span><span class="award-txt"><strong>SMART Fund Research Grant</strong> — PI. "Identification of Sperm-borne RNA Biomarkers of Embryo Development." CFAS. <em style="color:var(--accent-light)">$20,000</em></span></div>
-        <div class="award-row"><span class="award-yr">2021</span><span class="award-txt"><strong>CIHR Project Grant</strong> — Co-investigator. "Elucidating the roles of miRNAs and Hippo signaling on lineage specification." PI: S. Petropoulos. <em style="color:var(--accent-light)">$677,000</em></span></div>
-        <div class="award-row"><span class="award-yr">2016</span><span class="award-txt"><strong>OCE TalentEdge Fellowship</strong> — Grantee. "Advanced Non-Invasive Assays for Pre-Implantation Embryo Screening." <em style="color:var(--accent-light)">$70,000</em></span></div>
-        <div class="award-row"><span class="award-yr">2015</span><span class="award-txt"><strong>Ontario Graduate Scholarship</strong> — Doctoral research excellence, University of Guelph.</span></div>
-        <div class="award-row"><span class="award-yr">2013</span><span class="award-txt"><strong>Canada-Brazil Doctoral Research Exchange Award</strong> — Dept. of Foreign Affairs &amp; International Trade (DFAIT).</span></div>
+        <div class="award-row"><span class="award-yr">2025</span><span class="award-txt"><strong>CGS-M Scholarship</strong>, Project Supervisor. "Unveiling the Molecular Signature of Recurrent Implantation Failure." Grantee: Carly Keshen. <em style="color:var(--accent-light)">$27,000</em></span></div>
+        <div class="award-row"><span class="award-yr">2022</span><span class="award-txt"><strong>CIHR Project Grant</strong>, Collaborator. "Identification of functional epigenomic regions in sperm." PI: S. Kimmins. <em style="color:var(--accent-light)">$879,000</em></span></div>
+        <div class="award-row"><span class="award-yr">2021</span><span class="award-txt"><strong>SMART Fund Research Grant</strong>, PI. "Identification of Sperm-borne RNA Biomarkers of Embryo Development." CFAS. <em style="color:var(--accent-light)">$20,000</em></span></div>
+        <div class="award-row"><span class="award-yr">2021</span><span class="award-txt"><strong>CIHR Project Grant</strong>, Co-investigator. "Elucidating the roles of miRNAs and Hippo signaling on lineage specification." PI: S. Petropoulos. <em style="color:var(--accent-light)">$677,000</em></span></div>
       </div>
-
       <div class="pi-subsection">
         <div class="pi-sub-title">Education</div>
-        <div class="award-row"><span class="award-yr">2016</span><span class="award-txt"><strong>PhD, Biomedical Science</strong> — University of Guelph. Small RNA biology in bovine oocytes and early embryos (PIWI pathway).</span></div>
-        <div class="award-row"><span class="award-yr">2012</span><span class="award-txt"><strong>MSc, Biomedical Science</strong> — University of Guelph (transferred to PhD). Advisor: Dr. Allan King.</span></div>
-        <div class="award-row"><span class="award-yr">2011</span><span class="award-txt"><strong>BSc Honours</strong> — Wilfrid Laurier University. Thesis: Chloroplast pre-protein receptor domains. Advisor: Dr. Matthew Smith.</span></div>
-      </div>
-
-      <div class="pi-subsection">
-        <div class="pi-sub-title">Professional Affiliations</div>
-        <div class="award-row"><span class="award-yr">2022–</span><span class="award-txt">Member, American Society for Reproductive Medicine (ASRM)</span></div>
-        <div class="award-row"><span class="award-yr">2016–</span><span class="award-txt">Member, Canadian Fertility and Andrology Society (CFAS)</span></div>
+        <div class="award-row"><span class="award-yr">2016</span><span class="award-txt"><strong>PhD, Biomedical Science</strong>, University of Guelph. Small RNA biology in bovine oocytes and early embryos.</span></div>
+        <div class="award-row"><span class="award-yr">2011</span><span class="award-txt"><strong>BSc Honours</strong>, Wilfrid Laurier University. Thesis advisor: Dr. Matthew Smith.</span></div>
       </div>
     </div>
   </div>
 
-  <!-- GRAD STUDENTS -->
-  <div class="fade-in">
+  <section class="team-section fade-in">
     <h2 class="team-section-title">Graduate Students</h2>
-    <p class="team-section-sub">Our students are the heart of the lab — driving projects forward with creativity and rigour.</p>
+    <p class="team-section-sub">Current graduate trainees drive wet-lab and computational projects across the Digital Embryo and embryo development programs.</p>
     <div class="team-grid">
-
       <div class="member-card fade-in stagger-1">
-        <div class="member-photo">
-          <img src="images/sheila-kwok.jpg" alt="Sheila Kwok" style="width:100%;height:100%;object-fit:cover;">
-        </div>
+        <div class="member-photo"><img src="images/sanaa-ebrahim.jpg" alt="Sanaa Ebrahim"></div>
         <div class="member-info">
-          <h4 class="member-name">Sheila (Yat Sze) Kwok</h4>
-          <p class="member-role">PhD Candidate · Institute of Medical Science, University of Toronto · Projected Graduation: July 2026</p>
-          <p class="member-desc">Investigating single-cell transcriptomics of aneuploid embryo development, exploring how chromosomal abnormalities affect lineage dynamics and cell fate decisions in early human embryos.</p>
+          <h4 class="member-name">Sanaa Ebrahim</h4>
+          <p class="member-role">MSc Student, Health Sciences, Wilfrid Laurier University</p>
+          <p class="member-desc">Developing wet-lab workflows for single-cell and multi-omic profiling of human preimplantation embryos, including SS3xpress and scNMT-seq training through the CReATe collaboration.</p>
         </div>
       </div>
-
       <div class="member-card fade-in stagger-2">
-        <div class="member-photo">
-          <img src="images/carly-keshen.jpg" alt="Carly Keshen" style="width:100%;height:100%;object-fit:cover;">
-        </div>
+        <div class="member-photo"><img src="images/arwa-sheheryar.jpg" alt="Arwa Sheheryar"></div>
         <div class="member-info">
-          <h4 class="member-name">Carly Keshen</h4>
-          <p class="member-role">MSc Candidate · Institute of Medical Science, University of Toronto · Projected Graduation: August 2026</p>
-          <p class="member-desc">Investigating transcriptomic signatures of recurrent implantation failure using meta-analytic and machine learning approaches. Recipient of the 2025 CGS-M scholarship.</p>
+          <h4 class="member-name">Arwa Sheheryar</h4>
+          <p class="member-role">MBINF Student, University of Guelph</p>
+          <p class="member-desc">Extending transcriptional arrest status scoring across the Digital Embryo backbone to detect molecular signatures of maternal-to-zygotic transition failure.</p>
         </div>
       </div>
-
-      
-
     </div>
-  </div>
+  </section>
 
-  <!-- UNDERGRAD STUDENTS -->
-  <div class="fade-in" style="margin-top:4rem;">
-    <h2 class="team-section-title">Undergraduate Students</h2>
-    <p class="team-section-sub">Undergraduate researchers contributing to cutting-edge embryology and computational biology projects.</p>
+  <section class="team-section fade-in">
+    <h2 class="team-section-title">Undergraduate &amp; Research Trainees</h2>
+    <p class="team-section-sub">Students and trainees contribute focused analyses that become modular pieces of the broader atlas, modeling, and validation pipeline.</p>
     <div class="team-grid">
-
       <div class="member-card fade-in stagger-1">
-        <div class="member-photo">
-          <img src="images/eitan-lenga.jpg" alt="Eitan Lenga" style="width:100%;height:100%;object-fit:cover;">
+        <div class="member-photo"><img src="images/arsh-verma.jpg" alt="Arsh Verma"></div>
+        <div class="member-info">
+          <h4 class="member-name">Arsh Verma</h4>
+          <p class="member-role">USRA Student, Health Sciences, Wilfrid Laurier University</p>
+          <p class="member-desc">Analyzing transposable element activity and alternative splicing during preimplantation development and embryo arrest.</p>
         </div>
+      </div>
+      <div class="member-card fade-in stagger-2">
+        <div class="member-photo"><img src="images/deeksha-kumar.jpg" alt="Deeksha Kumar"></div>
+        <div class="member-info">
+          <h4 class="member-name">Deeksha Kumar</h4>
+          <p class="member-role">USRA Student, Health Sciences, Wilfrid Laurier University</p>
+          <p class="member-desc">Studying embryo time-lapse imaging and morphokinetics to connect visual developmental dynamics with molecular outcomes.</p>
+        </div>
+      </div>
+      <div class="member-card fade-in stagger-3">
+        <div class="member-photo"><img src="images/dominick-mueller.jpg" alt="Dominick Mueller"></div>
+        <div class="member-info">
+          <h4 class="member-name">Dominick Mueller</h4>
+          <p class="member-role">Co-op Student, Computer Science</p>
+          <p class="member-desc">Building methylation and multi-omic integration workflows for the Digital Embryo, with emphasis on GLUE-style cross-modal modeling.</p>
+        </div>
+      </div>
+      <div class="member-card fade-in">
+        <div class="member-photo"><img src="images/jaylan-tran.jpg" alt="Jaylan Tran"></div>
+        <div class="member-info">
+          <h4 class="member-name">Jaylan Tran</h4>
+          <p class="member-role">Research Student, Health Sciences, Wilfrid Laurier University</p>
+          <p class="member-desc">Developing variant-calling and embryo-level genetic analysis pipelines that support Digital Embryo metadata and allelic analyses.</p>
+        </div>
+      </div>
+      <div class="member-card fade-in">
+        <div class="member-photo"><img src="images/eitan-lenga.jpg" alt="Eitan Lenga"></div>
         <div class="member-info">
           <h4 class="member-name">Eitan Lenga</h4>
-          <p class="member-role">BSc Candidate · Health Science, Wilfrid Laurier University</p>
-          <p class="member-desc">Building a computational pipeline to analyze early human embryo single cell RNA sequencing data using RNA Velocity. By comparing spliced and unspliced transcription, I aim to predict future cell states via developmental directionality and identify molecular signatures associated with embryo arrest.</p>
-          <p style="margin-top:0.75rem;font-size:0.85rem;"><a href="mailto:eitanlenga@gmail.com" style="color:var(--accent-light);text-decoration:none;">eitanlenga@gmail.com</a></p>
+          <p class="member-role">Research Student, Health Sciences, Wilfrid Laurier University</p>
+          <p class="member-desc">Building RNA velocity workflows to infer developmental directionality and identify where embryo arrest diverges from typical progression.</p>
         </div>
       </div>
-  <div class="member-card fade-in stagger-2">
-  <div class="member-photo">
-    <img src="images/arsh-verma.jpg" alt="Arsh Verma" style="width:100%;height:100%;object-fit:cover;">
-  </div>
-  <div class="member-info">
-    <h4 class="member-name">Arsh Verma</h4>
-    <p class="member-role">BSc Candidate · Health Science, Wilfrid Laurier University</p>
-    <p class="member-desc">Investigating the role of transposable elements (TE) and alternative splicing events in regulating early human embryonic development and influencing implantation success. Through comparing TE expression in RNA-sequencing data from arrested versus successful embryos at the blastocyst stage, I dissect TE impact on transcriptomic dysregulation and its association with developmental failure. </p>
-    <p style="margin-top:0.75rem;font-size:0.85rem;"><a href="mailto:Contactarshverma@gmail.com" style="color:var(--accent-light);text-decoration:none;">Contactarshverma@gmail.com</a></p>
-  </div>
-</div>
-
-<div class="member-card fade-in stagger-3">
-  <div class="member-photo">
-    <img src="images/eric-chu.jpg" alt="Eric Chu" style="width:100%;height:100%;object-fit:cover;">
-  </div>
-  <div class="member-info">
-    <h4 class="member-name">Eric Chu</h4>
-    <p class="member-role">BSc Candidate · Honours Health Sciences, Wilfrid Laurier University</p>
-    <p class="member-desc">Investigating early embryonic development by building an interactive embryo timelapse viewer for the purpose of annotating developmental progression, and developing a convolutional neural network (CNN) pipeline for automated image analysis.</p>
-    <p style="margin-top:0.75rem;font-size:0.85rem;"><a href="mailto:chux0060@mylaurier.ca" style="color:var(--accent-light);text-decoration:none;">chux0060@mylaurier.ca</a></p>
-  </div>
-</div>
-
-<div class="member-card fade-in">
-  <div class="member-photo">
-    <!-- ADD PHOTO: <img src="emmanuel-arzoumanidis.jpg" alt="Emmanuel Arzoumanidis" style="width:100%;height:100%;object-fit:cover;"> -->
-    <div class="placeholder-label">Add photo<br><small style="opacity:0.6">emmanuel-arzoumanidis.jpg</small></div>
-  </div>
-  <div class="member-info">
-    <h4 class="member-name">Emmanuel Arzoumanidis</h4>
-    <p class="member-role">BSc Candidate · Health Sciences, Wilfrid Laurier University</p>
-    <p class="member-desc">Investigating endometrial samples in the context of recurrent implantation failure (RIF), with the goal of determining whether specific genetic variants may contribute to the RIF phenotype. I am currently developing and applying a standardized bulk RNA-seq analysis workflow to analyze existing data and identify potential variant signals and transcriptomic patterns associated with RIF.</p>
-    <p style="margin-top:0.75rem;font-size:0.85rem;"><a href="mailto:arzo8109@mylaurier.ca" style="color:var(--accent-light);text-decoration:none;">arzo8109@mylaurier.ca</a></p>
-  </div>
-</div>
-<div class="member-card fade-in">
-  <div class="member-photo">
-    <!-- ADD PHOTO: <img src="jaylan-tran.jpg" alt="Jaylan Tran" style="width:100%;height:100%;object-fit:cover;"> -->
-    <div class="placeholder-label">Add photo<br><small style="opacity:0.6">jaylan-tran.jpg</small></div>
-  </div>
-  <div class="member-info">
-    <h4 class="member-name">Jaylan Tran</h4>
-    <p class="member-role">BSc Candidate · Health Sciences, Wilfrid Laurier University </p>
-    <p class="member-desc">Developing a computational pipeline to analyze genetic variation in early human embryos using single-cell sequencing data. Using Monopogen, I perform single-cell–aware variant calling to generate embryo-level VCF files, which are then filtered and analyzed with PLINK to compute principal component analysis (PCA). Embryo variants are projected onto a 1000 Genomes reference panel to contextualize genetic variation and assess population structure. This workflow helps characterize lineage-level variation and provides a framework for studying genetic dynamics during the earliest stages of embryonic development.</p>
-    <p style="margin-top:0.75rem;font-size:0.85rem;"><a href="mailto:tran2602@mylaurier.ca" style="color:var(--accent-light);text-decoration:none;">tran2602@mylaurier.ca</a></p>
-  </div>
-</div>
-<div class="member-card fade-in">
-  <div class="member-photo">
-    <img src="images/Matthew-Shen.jpg" alt="Matthew Shen" style="width:100%;height:100%;object-fit:cover;">
-  </div>
-  <div class="member-info">
-    <h4 class="member-name">Matthew Shen</h4>
-    <p class="member-role">Incoming Freshman · Neuroscience, University of Pennsylvania</p>
-    <p class="member-desc">Building the Digital Embryo, a computational platform that integrates multi-omic single-cell data from human preimplantation embryos into a predictive developmental model. Responsibilities range from running reproducible bioinformatics pipelines on HPC infrastructure to building interactive frontend interfaces for exploring processed results. Current focus is on transcriptome-level preprocessing, metadata harmonization, and visualization tools.</p>
-    <p style="margin-top:0.75rem;font-size:0.85rem;"><a href="mailto:mtshen97@gmail.com" style="color:var(--accent-light);text-decoration:none;">mtshen97@gmail.com</a></p>
-  </div>
-</div>
-      <div class="member-card fade-in stagger-2" style="border-style:dashed;background:transparent;">
-        <div class="member-photo" style="background:transparent;">
-          <div class="placeholder-label" style="border:none;color:var(--accent-light);font-size:0.9rem;">Join Us</div>
-        </div>
+      <div class="member-card fade-in">
+        <div class="member-photo"><img src="images/Matthew-Shen.jpg" alt="Matthew Shen"></div>
         <div class="member-info">
-          <h4 class="member-name">Open Positions</h4>
-          <p class="member-role">Graduate &amp; Undergraduate</p>
-          <p class="member-desc">We're recruiting motivated students interested in computational biology and reproductive science. <a href="contact.html" style="color:var(--accent-light)">Get in touch →</a></p>
+          <h4 class="member-name">Matthew Shen</h4>
+          <p class="member-role">Research Student, University of Pennsylvania</p>
+          <p class="member-desc">Building the Digital Embryo atlas through standardized preprocessing, metadata harmonization, and cross-dataset quality-control workflows.</p>
         </div>
       </div>
-
     </div>
-  </div>
-<!-- ALUMNI -->
-<div class="fade-in" style="margin-top:4rem;">
-  <h2 class="team-section-title">Alumni</h2>
-  <p class="team-section-sub">Past members of the lab who have gone on to make their mark in science and beyond.</p>
-  <div class="team-grid">
+  </section>
 
-    <div class="member-card fade-in stagger-2">
-  <div class="member-photo">
-    <img src="images/tina-nguyen.jpg" alt="Tina Nguyen" style="width:100%;height:100%;object-fit:cover;">
-  </div>
-  <div class="member-info">
-    <h4 class="member-name">Tina Tu-Thu Ngoc Nguyen</h4>
-    <p class="member-role">Department of Physiology, University of Toronto · Graduated August 2024</p>
-    <p class="member-desc">Investigated endometrial receptivity and implantation failure, comparing and characterizing the endometrial receptive status of women suffering from recurrent implantation failure or thin endometrium, with the goal of developing therapies to improve implantation success in women with implantation failure.</p>
-  </div>
-  </div> 
-
-    <div class="member-card fade-in stagger-3">
-      <div class="member-photo">
-        <img src="images/nick-werry.jpeg" alt="Nicholas Werry" style="width:100%;height:100%;object-fit:cover;">
-      </div>
-      <div class="member-info">
-        <h4 class="member-name">Nicholas Werry</h4>
-        <p class="member-role">Biomedical Science, University of Guelph · Graduated July 2023</p>
-        <p class="member-desc">Primarily studied how small non-coding RNAs including miRNAs and piRNAs in bovine sperm correlate with fertilization rates. Research included collaborations investigating semen sales analysis, cryopreservation, and automation of in vitro embryo production.</p>
-      </div>
+  <section class="team-section fade-in">
+    <h2 class="team-section-title">Alumni</h2>
+    <p class="team-section-sub">Past lab members and trainees whose work helped shape current projects.</p>
+    <div class="team-grid">
+      <div class="member-card fade-in"><div class="member-photo"><img src="images/carly-keshen.jpg" alt="Carly Keshen"></div><div class="member-info"><h4 class="member-name">Carly Keshen</h4><p class="member-role">MSc Student, University of Toronto IMS</p><p class="member-desc">Led transcriptomic meta-analysis work on recurrent implantation failure and endometrial receptivity.</p></div></div>
+      <div class="member-card fade-in"><div class="member-photo"><img src="images/sheila-kwok.jpg" alt="Sheila Kwok"></div><div class="member-info"><h4 class="member-name">Sheila (Yat Sze) Kwok</h4><p class="member-role">PhD, University of Toronto IMS</p><p class="member-desc">Studied single-cell transcriptomics of aneuploid embryo development and lineage dynamics.</p></div></div>
+      <div class="member-card fade-in"><div class="member-photo"><img src="images/eric-chu.jpg" alt="Eric Chu"></div><div class="member-info"><h4 class="member-name">Eric Chu</h4><p class="member-role">Health Sciences, Wilfrid Laurier University</p><p class="member-desc">Developed embryo time-lapse annotation and deep-learning workflows.</p></div></div>
+      <div class="member-card fade-in"><div class="member-photo"><div class="placeholder-label">Alumni</div></div><div class="member-info"><h4 class="member-name">Emmanuel Arzoumanidis</h4><p class="member-role">Health Sciences, Wilfrid Laurier University</p><p class="member-desc">Analyzed expressed genetic variants in recurrent implantation failure endometrial RNA-seq data.</p></div></div>
+      <div class="member-card fade-in"><div class="member-photo"><img src="images/tina-nguyen.jpg" alt="Tina Nguyen"></div><div class="member-info"><h4 class="member-name">Tina Tu-Thu Ngoc Nguyen</h4><p class="member-role">Department of Physiology, University of Toronto</p><p class="member-desc">Studied endometrial receptivity and implantation failure in clinical and translational settings.</p></div></div>
+      <div class="member-card fade-in"><div class="member-photo"><img src="images/nick-werry.jpeg" alt="Nicholas Werry"></div><div class="member-info"><h4 class="member-name">Nicholas Werry</h4><p class="member-role">Biomedical Science, University of Guelph</p><p class="member-desc">Studied sperm small RNAs and associations with fertility in bovine reproductive biology.</p></div></div>
     </div>
-
-  </div>
-</div>
+  </section>
 </main>
 
 <footer class="footer">
-  <p class="footer-text">&copy; 2026 Russell Research Lab — Wilfrid Laurier University</p>
+  <p class="footer-text">&copy; 2026 Russell Research Lab, Wilfrid Laurier University</p>
   <div class="footer-links">
     <a href="index.html">Home</a>
     <a href="research.html">Research</a>

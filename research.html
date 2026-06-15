@@ -4,32 +4,30 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Research | Russell Research Lab</title>
-<meta name="description" content="Research themes of the Russell Research Lab: small RNA biology in embryos, the Digital Embryo multi-omic model, and endometrial receptivity and implantation failure.">
+<meta name="description" content="Research themes of the Russell Research Lab: the Digital Embryo, embryo arrest, single-cell multi-omics, and clinical translation in reproductive biology.">
 <meta property="og:title" content="Research | Russell Research Lab">
-<meta property="og:description" content="Small RNA biology, the Digital Embryo, and endometrial receptivity.">
+<meta property="og:description" content="Digital Embryo, embryo arrest, and reproductive multi-omics.">
 <meta property="og:type" content="website">
+<meta property="og:image" content="https://russelllab.ca/images/project-digital-embryo.png">
+<link rel="canonical" href="https://russelllab.ca/research.html">
 <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300;1,9..40,400&family=Playfair+Display:wght@400;500;600;700&display=swap">
 <link rel="stylesheet" href="css/main.css">
 <style>
-.themes-detailed { display: flex; flex-direction: column; gap: 5rem; }
-.theme-block { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; padding-bottom: 5rem; border-bottom: 1px solid var(--border); }
-.theme-block:last-child { border-bottom: none; }
-.theme-block:nth-child(even) { direction: rtl; }
-.theme-block:nth-child(even) > * { direction: ltr; }
-.theme-num { font-family: var(--font-display); font-size: 5rem; font-weight: 700; color: var(--accent-subtle); line-height: 1; margin-bottom: 0.5rem; }
-.theme-label { font-size: 0.72rem; color: var(--accent-light); letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 0.75rem; }
-.theme-title { font-family: var(--font-display); font-size: 2rem; font-weight: 600; margin-bottom: 1.25rem; line-height: 1.25; }
-.theme-body p { color: var(--text-secondary); font-size: 0.97rem; line-height: 1.85; margin-bottom: 1rem; }
-.theme-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1.5rem; }
-.tag { font-size: 0.78rem; padding: 0.3rem 0.85rem; background: rgba(45,95,206,0.1); border: 1px solid var(--accent-subtle); border-radius: 20px; color: var(--accent-light); }
-.theme-image { aspect-ratio: 4/3; background: linear-gradient(135deg, var(--bg-card), var(--accent-subtle)); border-radius: 12px; border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; overflow: hidden; }
-.theme-image img { width: 100%; height: 100%; object-fit: cover; border-radius: 12px; }
-.placeholder-label { text-align: center; color: var(--text-muted); font-size: 0.82rem; letter-spacing: 0.08em; text-transform: uppercase; padding: 1rem; border: 1px dashed var(--border-light); border-radius: 8px; }
-@media (max-width: 1024px) {
-  .theme-block { grid-template-columns: 1fr; }
-  .theme-block:nth-child(even) { direction: ltr; }
-}
+.themes-detailed{display:flex;flex-direction:column;gap:5rem;}
+.theme-block{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;padding-bottom:5rem;border-bottom:1px solid var(--border);}
+.theme-block:last-child{border-bottom:none;}
+.theme-block:nth-child(even){direction:rtl;}
+.theme-block:nth-child(even)>*{direction:ltr;}
+.theme-num{font-family:var(--font-display);font-size:5rem;font-weight:700;color:var(--accent-subtle);line-height:1;margin-bottom:0.5rem;}
+.theme-label{font-size:0.72rem;color:var(--accent-light);letter-spacing:0.12em;text-transform:uppercase;margin-bottom:0.75rem;}
+.theme-title{font-family:var(--font-display);font-size:2rem;font-weight:600;margin-bottom:1.25rem;line-height:1.25;}
+.theme-body p{color:var(--text-secondary);font-size:0.97rem;line-height:1.85;margin-bottom:1rem;}
+.theme-tags{display:flex;flex-wrap:wrap;gap:0.5rem;margin-top:1.5rem;}
+.tag{font-size:0.78rem;padding:0.3rem 0.85rem;background:rgba(45,95,206,0.1);border:1px solid var(--accent-subtle);border-radius:20px;color:var(--accent-light);}
+.theme-image{aspect-ratio:4/3;background:linear-gradient(135deg,var(--bg-card),var(--accent-subtle));border-radius:12px;border:1px solid var(--border);display:flex;align-items:center;justify-content:center;overflow:hidden;}
+.theme-image img{width:100%;height:100%;object-fit:contain;border-radius:12px;background:#06080f;}
+@media (max-width:1024px){.theme-block{grid-template-columns:1fr}.theme-block:nth-child(even){direction:ltr}}
 </style>
 </head>
 <body>
@@ -52,65 +50,57 @@
 <div class="page-header"><div class="page-header-inner">
   <div class="section-label">What We Study</div>
   <h1 class="page-title">Research Themes</h1>
-  <p class="page-subtitle">Our work sits at the intersection of reproductive biology, computational genomics, and clinical fertility — connecting molecular mechanisms to patient outcomes.</p>
+  <p class="page-subtitle">Our work connects reproductive biology, computational genomics, and clinical fertility research to understand the earliest stages of human development.</p>
 </div></div>
 
 <main class="main">
   <div class="themes-detailed">
-
     <div class="theme-block fade-in">
       <div class="theme-body">
         <div class="theme-num">01</div>
         <div class="theme-label">Theme 01</div>
-        <h2 class="theme-title">Small RNA Biology in Early Embryos</h2>
-        <p>Every human embryo carries a complex molecular programme encoded not just in its DNA, but in thousands of tiny RNA molecules. These small non-coding RNAs — including microRNAs, piRNAs, and others — act as switches and silencers, determining which genes are active at each stage of development.</p>
-        <p>Our lab investigates how this RNA landscape changes across the first five days of embryo life, and what happens when it goes wrong. By combining single-cell sequencing with advanced bioinformatics, we are building the first comprehensive atlas of small non-coding RNAs in human preimplantation development.</p>
+        <h2 class="theme-title">The Digital Embryo</h2>
+        <p>The Digital Embryo is a multi-omic atlas and predictive model of human preimplantation development. We integrate single-cell transcriptomic, epigenomic, chromatin, genetic, and imaging datasets to learn how embryos move from zygote to blastocyst.</p>
+        <p>The long-term goal is an interpretable in silico model that identifies normal developmental trajectories, detects divergence, and nominates regulatory programs for experimental validation.</p>
         <div class="theme-tags">
-          <span class="tag">piRNA / PIWI pathway</span><span class="tag">microRNA</span><span class="tag">Single-cell RNA-seq</span><span class="tag">Preimplantation embryos</span><span class="tag">Epigenetics</span>
+          <span class="tag">Multi-omic integration</span><span class="tag">Single-cell atlas</span><span class="tag">Trajectory inference</span><span class="tag">GLUE</span><span class="tag">Gene regulatory networks</span>
         </div>
       </div>
-      <div class="theme-image">
-        <div class="placeholder-label">Add image here<br><small style="opacity:0.6">e.g. fluorescence confocal of embryo</small></div>
-      </div>
+      <div class="theme-image"><img src="images/project-digital-embryo.png" alt="Digital Embryo multi-omic atlas schematic"></div>
     </div>
 
     <div class="theme-block fade-in">
       <div class="theme-body">
         <div class="theme-num">02</div>
         <div class="theme-label">Theme 02</div>
-        <h2 class="theme-title">The Digital Embryo</h2>
-        <p>What if we could simulate human embryo development on a computer? The Digital Embryo initiative aims to construct predictive computational models by integrating multi-omic datasets — transcriptomics, epigenomics, chromatin accessibility — into a unified framework.</p>
-        <p>By unifying publicly available single-cell data with novel clinical samples from our lab, this initiative seeks to build the first comprehensive in silico model of human preimplantation development — one that can predict which embryos will thrive and which will not.</p>
+        <h2 class="theme-title">Molecular Causes of Embryo Arrest</h2>
+        <p>Many embryos generated during IVF fail before blastocyst formation. We study embryo arrest as a molecular state, not only a visual outcome, by comparing transcriptomic dynamics, maternal-to-zygotic transition signatures, RNA velocity, transposable element activity, splicing, and allelic features.</p>
+        <p>These analyses are designed to identify when developmental divergence begins and which molecular programs may explain why some embryos progress while others stall.</p>
         <div class="theme-tags">
-          <span class="tag">Multi-omics integration</span><span class="tag">Trajectory inference</span><span class="tag">Gene regulatory networks</span><span class="tag">Computational modeling</span><span class="tag">UMAP / GLUE</span>
+          <span class="tag">Embryo arrest</span><span class="tag">MZT</span><span class="tag">RNA velocity</span><span class="tag">Transposable elements</span><span class="tag">Allelic analysis</span>
         </div>
       </div>
-      <div class="theme-image">
-        <div class="placeholder-label">Add image here<br><small style="opacity:0.6">e.g. UMAP or computational figure</small></div>
-      </div>
+      <div class="theme-image"><img src="images/project-arwa-schematic.png" alt="Transcriptional arrest status scoring schematic"></div>
     </div>
 
     <div class="theme-block fade-in">
       <div class="theme-body">
         <div class="theme-num">03</div>
         <div class="theme-label">Theme 03</div>
-        <h2 class="theme-title">Endometrial Receptivity &amp; Implantation</h2>
-        <p>For a pregnancy to occur, the embryo and uterus must engage in a precise molecular conversation. When this dialogue fails, recurrent implantation failure (RIF) results — one of the most frustrating diagnoses in reproductive medicine, affecting couples who produce healthy embryos but cannot sustain a pregnancy.</p>
-        <p>We use transcriptomic and multi-omic approaches to decode the endometrial environment, identify biomarkers of receptivity failure, and test therapeutic interventions — including platelet-rich plasma and organoid models — to improve outcomes for RIF patients.</p>
+        <h2 class="theme-title">Wet-Lab Validation and Clinical Translation</h2>
+        <p>Computational predictions are only useful if they connect back to biology. Through the CReATe Fertility Centre collaboration, we are developing wet-lab workflows for embryo single-cell and multi-omic profiling, alongside projects in endometrial receptivity, implantation failure, and fertility-related RNA biomarkers.</p>
+        <p>This translational arm links model predictions to new samples, reproductive medicine questions, and clinically meaningful experimental designs.</p>
         <div class="theme-tags">
-          <span class="tag">Endometrial receptivity</span><span class="tag">Recurrent implantation failure</span><span class="tag">Transcriptomics</span><span class="tag">Organoid models</span><span class="tag">PRP therapy</span>
+          <span class="tag">SS3xpress</span><span class="tag">scNMT-seq</span><span class="tag">Embryology</span><span class="tag">Endometrial receptivity</span><span class="tag">Clinical fertility</span>
         </div>
       </div>
-      <div class="theme-image">
-        <div class="placeholder-label">Add image here<br><small style="opacity:0.6">e.g. endometrial histology or organoid</small></div>
-      </div>
+      <div class="theme-image"><img src="images/project-sanaa-schematic.png" alt="Wet-lab embryo multi-omic sequencing workflow schematic"></div>
     </div>
-
   </div>
 </main>
 
 <footer class="footer">
-  <p class="footer-text">&copy; 2026 Russell Research Lab — Wilfrid Laurier University</p>
+  <p class="footer-text">&copy; 2026 Russell Research Lab, Wilfrid Laurier University</p>
   <div class="footer-links">
     <a href="index.html">Home</a>
     <a href="research.html">Research</a>

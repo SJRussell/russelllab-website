@@ -4,37 +4,44 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Projects | Russell Research Lab</title>
-<meta name="description" content="Active research projects in the Russell Research Lab spanning single-cell embryo transcriptomics, computational biology, endometrial receptivity, and RNA velocity modeling.">
+<meta name="description" content="Current Russell Research Lab projects spanning the Digital Embryo, single-cell embryo multi-omics, methylation integration, embryo arrest, RNA velocity, and time-lapse morphokinetics.">
 <meta property="og:title" content="Projects | Russell Research Lab">
-<meta property="og:description" content="Active research projects in the Russell Research Lab.">
+<meta property="og:description" content="Current projects in embryo multi-omics, computational modeling, and fertility research.">
 <meta property="og:type" content="website">
+<meta property="og:image" content="https://russelllab.ca/images/project-digital-embryo.png">
+<link rel="canonical" href="https://russelllab.ca/projects.html">
 <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300;1,9..40,400&family=Playfair+Display:wght@400;500;600;700&display=swap">
 <link rel="stylesheet" href="css/main.css">
 <style>
-.project { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: start; margin-bottom: 5rem; padding-bottom: 5rem; border-bottom: 1px solid var(--border); }
-.project:last-child { margin-bottom: 0; padding-bottom: 0; border-bottom: none; }
-.project:nth-child(even) { direction: rtl; }
-.project:nth-child(even) > * { direction: ltr; }
-.project-number { font-family: var(--font-display); font-size: 3.5rem; font-weight: 700; color: var(--accent-subtle); line-height: 1; margin-bottom: 0.5rem; }
-.project-title { font-family: var(--font-display); font-size: 1.6rem; font-weight: 600; margin-bottom: 0.5rem; line-height: 1.3; }
-.project-student { font-size: 0.88rem; color: var(--accent-light); margin-bottom: 1.25rem; font-weight: 500; }
-.project-desc { color: var(--text-secondary); font-size: 0.95rem; line-height: 1.8; margin-bottom: 1.5rem; }
-.detail-label { font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-muted); font-weight: 500; margin-bottom: 0.5rem; margin-top: 1.25rem; }
-.project-questions { display: flex; flex-direction: column; gap: 0.4rem; }
-.project-questions span { font-size: 0.9rem; color: var(--text-secondary); padding-left: 1rem; border-left: 2px solid var(--accent-subtle); line-height: 1.5; }
-.methods { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.5rem; }
-.method-tag { font-size: 0.78rem; padding: 0.3rem 0.75rem; background: rgba(45,95,206,0.1); border: 1px solid var(--accent-subtle); border-radius: 20px; color: var(--accent-light); }
-.project-image { aspect-ratio: 4/3; background: linear-gradient(135deg, var(--bg-card), var(--accent-subtle)); border-radius: 12px; border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; overflow: hidden; }
-.project-image img { width: 100%; height: 100%; object-fit: cover; border-radius: 12px; }
-.placeholder-label { text-align: center; color: var(--text-muted); font-size: 0.82rem; letter-spacing: 0.08em; text-transform: uppercase; padding: 1rem; border: 1px dashed var(--border-light); border-radius: 8px; }
-.project-pub { margin-top: 1.25rem; padding: 1rem 1.25rem; background: rgba(45,95,206,0.05); border-radius: 8px; border: 1px solid var(--border); }
-.project-pub-label { font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 0.4rem; }
-.project-pub-ref { font-size: 0.85rem; color: var(--text-secondary); line-height: 1.5; font-style: italic; }
-@media (max-width: 1024px) {
-  .project { grid-template-columns: 1fr; }
-  .project:nth-child(even) { direction: ltr; }
-}
+.program-intro{display:grid;grid-template-columns:1.15fr 0.85fr;gap:3rem;align-items:center;margin-bottom:5rem;padding-bottom:5rem;border-bottom:1px solid var(--border);}
+.program-intro h2{font-family:var(--font-display);font-size:2rem;font-weight:600;margin-bottom:1rem;}
+.program-intro p{color:var(--text-secondary);font-size:0.98rem;line-height:1.8;margin-bottom:1rem;}
+.program-metrics{display:grid;grid-template-columns:1fr 1fr;gap:1rem;}
+.metric{background:var(--bg-card);border:1px solid var(--border);border-radius:10px;padding:1.4rem;}
+.metric-num{font-family:var(--font-display);font-size:2rem;color:var(--accent-light);font-weight:600;}
+.metric-label{font-size:0.82rem;color:var(--text-secondary);line-height:1.5;margin-top:0.25rem;}
+.project{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start;margin-bottom:5rem;padding-bottom:5rem;border-bottom:1px solid var(--border);}
+.project:last-child{margin-bottom:0;padding-bottom:0;border-bottom:none;}
+.project:nth-child(even){direction:rtl;}
+.project:nth-child(even)>*{direction:ltr;}
+.project-number{font-family:var(--font-display);font-size:3.5rem;font-weight:700;color:var(--accent-subtle);line-height:1;margin-bottom:0.5rem;}
+.project-title{font-family:var(--font-display);font-size:1.6rem;font-weight:600;margin-bottom:0.5rem;line-height:1.3;}
+.project-student{font-size:0.88rem;color:var(--accent-light);margin-bottom:1.25rem;font-weight:500;line-height:1.5;}
+.project-desc{color:var(--text-secondary);font-size:0.95rem;line-height:1.8;margin-bottom:1.5rem;}
+.detail-label{font-size:0.75rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-muted);font-weight:500;margin-bottom:0.5rem;margin-top:1.25rem;}
+.project-questions{display:flex;flex-direction:column;gap:0.4rem;}
+.project-questions span{font-size:0.9rem;color:var(--text-secondary);padding-left:1rem;border-left:2px solid var(--accent-subtle);line-height:1.5;}
+.methods{display:flex;flex-wrap:wrap;gap:0.5rem;margin-top:0.5rem;}
+.method-tag{font-size:0.78rem;padding:0.3rem 0.75rem;background:rgba(45,95,206,0.1);border:1px solid var(--accent-subtle);border-radius:20px;color:var(--accent-light);}
+.project-image{aspect-ratio:4/3;background:linear-gradient(135deg,var(--bg-card),var(--accent-subtle));border-radius:12px;border:1px solid var(--border);display:flex;align-items:center;justify-content:center;overflow:hidden;}
+.project-image img{width:100%;height:100%;object-fit:cover;border-radius:12px;}
+.project-image.contain img{object-fit:contain;background:#06080f;}
+.project-pub{margin-top:1.25rem;padding:1rem 1.25rem;background:rgba(45,95,206,0.05);border-radius:8px;border:1px solid var(--border);}
+.project-pub-label{font-size:0.72rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-muted);margin-bottom:0.4rem;}
+.project-pub-ref{font-size:0.85rem;color:var(--text-secondary);line-height:1.5;font-style:italic;}
+@media (max-width:1024px){.program-intro,.project{grid-template-columns:1fr}.project:nth-child(even){direction:ltr}}
+@media (max-width:640px){.program-metrics{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -57,254 +64,191 @@
 <div class="page-header"><div class="page-header-inner">
   <div class="section-label">Current Work</div>
   <h1 class="page-title">Research Projects</h1>
-  <p class="page-subtitle">Each project contributes to our overarching goal of building a comprehensive molecular understanding of human embryo development and improving fertility care.</p>
+  <p class="page-subtitle">A project hub for the lab's integrated work in embryo multi-omics, developmental arrest, and fertility-focused computational biology.</p>
 </div></div>
 
 <main class="main">
+  <section class="program-intro fade-in">
+    <div>
+      <h2>The Digital Embryo</h2>
+      <p>The lab's central program is a multi-omic atlas and predictive model of human preimplantation development, spanning zygote to blastocyst. The project integrates public and newly generated single-cell datasets to identify molecular trajectories, divergence points, and regulatory programs linked to embryo competence and arrest.</p>
+      <p>Student projects are designed as modular contributions to this shared backbone: transcriptome harmonization, methylation integration, allelic and variant analysis, RNA velocity, time-lapse morphokinetics, and wet-lab validation.</p>
+    </div>
+    <div class="program-metrics">
+      <div class="metric"><div class="metric-num">52</div><div class="metric-label">Curated datasets in the broader embryo multi-omic landscape</div></div>
+      <div class="metric"><div class="metric-num">0-6</div><div class="metric-label">Developmental days modeled from zygote to blastocyst</div></div>
+      <div class="metric"><div class="metric-num">4</div><div class="metric-label">Program pillars: atlas, dynamics, regulation, validation</div></div>
+      <div class="metric"><div class="metric-num">1</div><div class="metric-label">Shared computational backbone for lab-wide projects</div></div>
+    </div>
+  </section>
 
-  <!-- PROJECT 1 -->
   <div class="project fade-in">
     <div class="project-text">
       <div class="project-number">01</div>
-      <h3 class="project-title">Transcriptomic Signatures of Recurrent Implantation Failure</h3>
-      <p class="project-student">Carly Keshen, MSc Candidate</p>
-      <p class="project-desc">Despite advances in IVF, recurrent implantation failure (RIF) remains one of the most frustrating challenges in reproductive medicine. This project uses transcriptomic analysis of endometrial tissue to identify molecular signatures that distinguish RIF patients from fertile controls, with the goal of developing clinically actionable biomarkers. Despite advances in IVF, recurrent implantation failure (RIF) remains one of the most frustrating challenges in reproductive medicine. This project uses transcriptomic analysis of endometrial tissue to identify molecular signatures that distinguish RIF patients from fertile controls, with the goal of developing clinically actionable biomarkers.
-</p>
+      <h3 class="project-title">Integrated Multi-Omic Atlas of Human Preimplantation Development</h3>
+      <p class="project-student">Matthew Shen, Jaylan Tran, Dominick Mueller, Arwa Sheheryar, Arsh Verma, Eitan Lenga</p>
+      <p class="project-desc">This program builds the core Digital Embryo atlas by reprocessing embryo datasets through standardized pipelines, harmonizing metadata, integrating modalities, and comparing normal developmental trajectories against embryo arrest. The goal is to create a durable computational reference that supports downstream prediction, hypothesis generation, and wet-lab validation.</p>
       <div class="detail-label">Major Questions</div>
       <div class="project-questions">
-        <span>What gene expression patterns characterize the endometrium in RIF patients during the window of implantation?</span>
-        <span>Can transcriptomic classifiers predict implantation success and guide personalized treatment strategies?</span>
-        <span>How do meta-analytic approaches improve the robustness of endometrial biomarker discovery?</span>
+        <span>Where do embryos diverge from expected developmental trajectories?</span>
+        <span>Which molecular programs predict progression, arrest, and lineage specification?</span>
+        <span>How can transcriptomic, epigenomic, and time-lapse features be integrated into one interpretable model?</span>
       </div>
       <div class="detail-label">Methods</div>
       <div class="methods">
-        <span class="method-tag">RNA Sequencing</span><span class="method-tag">Meta-analysis</span>
-        <span class="method-tag">Differential Expression</span><span class="method-tag">Machine Learning Classifiers</span><span class="method-tag">Clinical Validation</span>
+        <span class="method-tag">Single-cell RNA-seq</span><span class="method-tag">Metadata harmonization</span><span class="method-tag">Trajectory inference</span><span class="method-tag">Multi-omic integration</span><span class="method-tag">HPC workflows</span>
       </div>
       <div class="project-pub">
         <div class="project-pub-label">Related Publication</div>
-        <p class="project-pub-ref">Russell SJ et al. Autologous platelet-rich plasma improves the endometrial thickness and live birth rate in patients with recurrent implantation failure. <em>J Assist Reprod Genet</em>, 2022.</p>
+        <p class="project-pub-ref">Russell SJ, Zhao C et al. An atlas of small non-coding RNAs in human preimplantation development. Nature Communications, 2024.</p>
       </div>
     </div>
-    <div class="project-image">
-      <!-- ADD IMAGE: <img src="your-image.jpg" alt="Endometrial transcriptomics"> -->
-      <div class="placeholder-label">Add project image<br><small style="opacity:0.6">e.g. endometrial histology</small></div>
-    </div>
+    <div class="project-image contain"><img src="images/project-digital-embryo.png" alt="Digital Embryo multi-omic atlas schematic"></div>
   </div>
 
-  <!-- PROJECT 2 -->
   <div class="project fade-in">
     <div class="project-text">
       <div class="project-number">02</div>
-      <h3 class="project-title">The Digital Embryo: Predictive Multi-Omic Models</h3>
-      <p class="project-student">Dr. Stewart Russell, Principal Investigator</p>
-      <p class="project-desc">The Digital Embryo project aims to construct computational models that integrate multi-omic datasets — transcriptomics, epigenomics, chromatin accessibility — to predict embryo developmental trajectories. By unifying publicly available single-cell data with novel clinical samples, this initiative seeks to build the first comprehensive in silico model of human preimplantation development.</p>
+      <h3 class="project-title">Wet-Lab Multi-Omic Profiling of Human Embryos</h3>
+      <p class="project-student">Sanaa Ebrahim</p>
+      <p class="project-desc">This project establishes wet-lab workflows for single-cell and multi-omic profiling of human preimplantation embryos through the CReATe collaboration. The work links sequencing protocol development with the computational atlas so newly generated samples can directly test predictions from the Digital Embryo.</p>
       <div class="detail-label">Major Questions</div>
       <div class="project-questions">
-        <span>Can multi-omic data integration reveal cell fate decision mechanisms invisible to single-modality analysis?</span>
-        <span>How do epigenetic reprogramming dynamics predict developmental competence?</span>
-        <span>What computational frameworks best capture the temporal and molecular complexity of embryogenesis?</span>
+        <span>Which protocols best preserve transcriptomic and epigenomic information from limited embryo material?</span>
+        <span>How can new clinical samples validate atlas-derived predictions?</span>
+        <span>What molecular signatures distinguish developmental competence from arrest?</span>
       </div>
       <div class="detail-label">Methods</div>
       <div class="methods">
-        <span class="method-tag">Single-cell Multi-omics</span><span class="method-tag">Data Integration (GLUE/fastMNN)</span>
-        <span class="method-tag">Optimal Transport</span><span class="method-tag">Trajectory Inference</span><span class="method-tag">Gene Regulatory Networks</span>
-      </div>
-      <div class="project-pub">
-        <div class="project-pub-label">Related Publication</div>
-        <p class="project-pub-ref">Russell SJ, Zhao C et al. An atlas of small non-coding RNAs in human preimplantation development. <em>Nature Communications</em>, 2024.</p>
+        <span class="method-tag">SS3xpress</span><span class="method-tag">scNMT-seq</span><span class="method-tag">Embryology collaboration</span><span class="method-tag">Single-cell multi-omics</span>
       </div>
     </div>
-    <div class="project-image">
-      <!-- ADD IMAGE: <img src="your-image.jpg" alt="Computational pipeline"> -->
-      <div class="placeholder-label">Add project image<br><small style="opacity:0.6">e.g. UMAP / pipeline figure</small></div>
-    </div>
+    <div class="project-image contain"><img src="images/project-sanaa-schematic.png" alt="Sanaa Ebrahim embryo multi-omic sequencing workflow schematic"></div>
   </div>
 
-  <!-- PROJECT 3 -->
   <div class="project fade-in">
     <div class="project-text">
       <div class="project-number">03</div>
-      <h3 class="project-title">Single-Cell Transcriptomics of Aneuploid Embryo Development</h3>
-      <p class="project-student">Sheila (Yat Sze) Kwok, PhD Candidate</p>
-      <p class="project-desc">Aneuploidy is remarkably common in human embryos and a leading cause of implantation failure and pregnancy loss. This project uses single-cell transcriptomics of post-implantation human embryos to understand how aneuploid cells are depleted in mosaic embryos and how lineage dynamics are affected by chromosomal abnormalities.</p>
+      <h3 class="project-title">Methylation and Cross-Modal Integration</h3>
+      <p class="project-student">Dominick Mueller</p>
+      <p class="project-desc">This project integrates DNA methylation, transcriptomic, and epigenomic features into a shared model of early development. The immediate focus is to build interpretable cross-modal workflows that let methylation dynamics inform embryo trajectory inference and regulatory architecture.</p>
       <div class="detail-label">Major Questions</div>
       <div class="project-questions">
-        <span>What transcriptomic signatures distinguish aneuploid from euploid cells in mosaic human embryos?</span>
-        <span>How does the embryo selectively deplete aneuploid cells during early development?</span>
-        <span>What are the lineage-specific consequences of mosaicism for downstream development?</span>
+        <span>How do methylation and chromatin features align with transcriptional state transitions?</span>
+        <span>Can cross-modal integration reveal regulatory structure not visible from RNA alone?</span>
+        <span>Which integration strategies are robust across embryo datasets and assay platforms?</span>
       </div>
       <div class="detail-label">Methods</div>
       <div class="methods">
-        <span class="method-tag">Single-cell RNA-seq</span><span class="method-tag">scDNA-seq</span>
-        <span class="method-tag">Extended Embryo Culture</span><span class="method-tag">Lineage Analysis</span><span class="method-tag">PGT-A</span>
-      </div>
-      <div class="project-pub">
-        <div class="project-pub-label">Related Publication</div>
-        <p class="project-pub-ref">Kwok SYS, Haham LM, Russell SJ et al. Single-cell transcriptomics of postimplantation embryos: unveiling aneuploidy effects and lineage dynamics. <em>Research Square</em>, 2025.</p>
+        <span class="method-tag">DNA methylation</span><span class="method-tag">GLUE-style integration</span><span class="method-tag">Epigenomics</span><span class="method-tag">Latent-space modeling</span>
       </div>
     </div>
-    <div class="project-image">
-      <!-- ADD IMAGE: <img src="your-image.jpg" alt="Blastocyst IF aneuploidy"> -->
-      <div class="placeholder-label">Add project image<br><small style="opacity:0.6">e.g. blastocyst IF / aneuploidy</small></div>
-    </div>
+    <div class="project-image contain"><img src="images/project-dominick-integration.png" alt="RNA methylation and epigenome integration workflow for the Digital Embryo"></div>
   </div>
 
-  <!-- PROJECT 4 -->
-<div class="project fade-in">
-      <div class="project-text">
-        <div class="project-number">04</div>
-        <h3 class="project-title">Exploring Transposable Elements and Alternative Splicing Events as Drivers of Embryonic Development</h3>
-        <p class="project-student">Arsh Verma, HBSc Candidate</p>
-        <p class="project-desc">From a multi-omics perspective, the influence of Transposable Elements (TEs) and alternative splicing events (SEs) on preimplantation embryonic development remains ambiguous. In the Digital Embryo’s initial transcriptomic phase, I will analyze preimplantation single-cell RNA-sequencing datasets to generate reproducible feature matrices outlining TE activity (using SoloTE, a bioinformatics tool) and isoform/splicing dynamics (using Salmon and SUPPA2) across embryos that arrest versus those that develop successfully. The analysis will focus on the most robust and highly expressed TE classes, subfamilies, and loci, as well as key splicing events, helping to strengthen the predictive abilities of the Digital Embryo. Generated matrices containing common TE features and SEs (expressed via Percent Spliced-In values) will undergo quality control and metadata integration to support downstream comparison analysis with literature describing the functional roles of specific TEs and SEs.</p>
-        <div class="detail-label">Major Questions</div>
-        <div class="project-questions">
-          <span>Which transposable element subfamilies/loci and/or alternative splicing events are upregulated or downregulated in association with the successful development or arrest of preimplantation embryos?</span>
-          <span>Are there specific TE features or splicing events that occur at particular cell lineages, embryonic days, or developmental stages that are associated with embryonic arrest or successful growth trajectories? How so and why?</span>
-        </div>
-        <div class="detail-label">Methods</div>
-        <div class="methods">
-          <span class="method-tag">Computational Pipeline Building</span>
-          <span class="method-tag">Literature Review</span>
-          <span class="method-tag">Differential Expression</span>
-          <span class="method-tag">Alignments and QCs</span>
-          <span class="method-tag">Feature and Gene Quantifications</span>
-          <span class="method-tag">Seurat Analysis</span>
-          <span class="method-tag">Bioinformatics Tools for Transcriptomic Analysis</span>
-        </div>
+  <div class="project fade-in">
+    <div class="project-text">
+      <div class="project-number">04</div>
+      <h3 class="project-title">Transcriptional Arrest Status Across the Digital Embryo</h3>
+      <p class="project-student">Arwa Sheheryar, with Jaylan Tran</p>
+      <p class="project-desc">This project adapts transcriptional arrest status scoring to archival embryo datasets where parental genomes are unavailable. By projecting arrest-related signatures across the atlas, the work tests whether maternal-to-zygotic transition failure can be detected before, during, and after visible developmental arrest.</p>
+      <div class="detail-label">Major Questions</div>
+      <div class="project-questions">
+        <span>Can transcriptional arrest be scored without parental whole-genome sequencing?</span>
+        <span>Are arrested cohorts enriched for high-arrest molecular signatures?</span>
+        <span>Do DPRX, ARGFX, HDAC1, and SIRT1-associated signals generalize beyond the original discovery cohort?</span>
       </div>
-      <div class="project-image">
-        <img src="images/arsh-project-picture.png" alt="description" style="width:100%;height:100%;object-fit:contain;background:#06080f;">
+      <div class="detail-label">Methods</div>
+      <div class="methods">
+        <span class="method-tag">TAS scoring</span><span class="method-tag">Allelic analysis</span><span class="method-tag">AUCell</span><span class="method-tag">scANVI</span><span class="method-tag">MZT biology</span>
       </div>
     </div>
+    <div class="project-image contain"><img src="images/project-arwa-schematic.png" alt="Transcriptional arrest status scoring workflow across embryo datasets"></div>
+  </div>
 
- <div class="project fade-in">
-      <div class="project-text">
-        <div class="project-number">05</div>
-        <h3 class="project-title">RNA Velocity Based Prediction of Embryo Progression and Arrest</h3>
-        <p class="project-student">Eitan Lenga, HBSc Candidate</p>
-        <p class="project-desc">I am building a reproducible RNA velocity pipeline for early human embryo single-cell RNA-seq datasets to infer developmental directionality from spliced vs. unspliced transcription. By integrating multiple public embryo datasets on the Nibi cluster, I generate Velocyto loom files and apply scVelo to estimate velocity fields, confidence metrics, and gene-level dynamics. I then compare “typical” developmental trajectories against cleavage-stage arrest phenotypes to identify where transcriptional progression diverges. The goal is to create a standardized workflow that supports cross-dataset comparisons and prioritizes candidate molecular signatures linked to embryo arrest.</p>
-        <div class="detail-label">Major Questions</div>
-        <div class="project-questions">
-          <span>How do inferred RNA velocity directionality and confidence differ between normally developing embryos and cleavage-stage arrested embryos?</span>
-          <span>Which genes show the strongest dynamic signatures (phase-portrait behaviour / velocity signal) during the embryo development, and how are these signatures altered in arrest subtypes?</span>
-          <span>Can velocity-derived metrics (e.g., velocity length, confidence, and transition structure) be used as quantitative features for comparing developmental progression across datasets and conditions?</span>
-        </div>
-        <div class="detail-label">Methods</div>
-        <div class="methods">
-          <span class="method-tag">Velocity (run-smartseq2) to generate spliced/unspliced counts as .loom files</span>
-          <span class="method-tag">Scanpy preprocessing (HVG selection, PCA, neighbours, UMAPs)</span>
-          <span class="method-tag">scVelo (stochastic model, velocity graph, confidence/length metrics)</span>
-        </div>
+  <div class="project fade-in">
+    <div class="project-text">
+      <div class="project-number">05</div>
+      <h3 class="project-title">Transposable Elements and Alternative Splicing in Embryo Arrest</h3>
+      <p class="project-student">Arsh Verma</p>
+      <p class="project-desc">This project quantifies transposable element activity and alternative splicing across developing and arrested embryos. The work asks whether TE families, loci, or splice events mark specific developmental windows or failure modes within the Digital Embryo atlas.</p>
+      <div class="detail-label">Major Questions</div>
+      <div class="project-questions">
+        <span>Which TE subfamilies and loci change during progression versus arrest?</span>
+        <span>Are splicing events associated with stage transitions or developmental failure?</span>
+        <span>Can TE and splicing features improve arrest classification?</span>
       </div>
-      <div class="project-image">
-        <img src="images/UMAP-Image-eitan.jpg" alt="description">
+      <div class="detail-label">Methods</div>
+      <div class="methods">
+        <span class="method-tag">SoloTE</span><span class="method-tag">Salmon</span><span class="method-tag">SUPPA2</span><span class="method-tag">Splicing analysis</span><span class="method-tag">Feature matrices</span>
       </div>
     </div>
+    <div class="project-image contain"><img src="images/arsh-project-picture.png" alt="Transposable element and splicing analysis schematic"></div>
+  </div>
 
-    <div class="project fade-in">
-      <div class="project-text">
-        <div class="project-number">06</div>
-        <h3 class="project-title">Automated Analysis of Embryo Development from Time-Lapse Imaging Using Deep Learning and Interactive Annotation Tools</h3>
-        <p class="project-student">Eric Chu, HBSc Candidate</p>
-        <p class="project-desc">My project aims to develop a convolutional neural network (CNN) pipeline for analyzing time-lapse image data of developing embryos. The pipeline will be able to process large image sequences to detect and classify important developmental events using a trained model. To support this pipeline, I have developed an interactive embryo viewer and annotation application to allow researchers to efficiently label key developmental stages and morphological features. The CNN pipeline and genetic data will be combined to create the Digital Embryo.</p>
-        <div class="detail-label">Major Questions</div>
-        <div class="project-questions">
-          <span>How can convolution neural networks be utilized to accurately identify key morphological events from embryo time-lapse imaging data to make predictions about embryo viability?</span>
-          <span>What key morphological features of developing embryos are most predictive of successful or unsuccessful developmental outcomes?</span>
-          <span>How can the CNN pipeline be scaled and integrated with genetic data to create the Digital Embryo?</span>
-        </div>
-        <div class="detail-label">Methods</div>
-        <div class="methods">
-          <span class="method-tag">Processing and annotating time-lapse imaging data</span>
-          <span class="method-tag">Deep learning models (FEMI and GRU)</span>
-          <span class="method-tag">Designing a custom embryo viewer and annotation application to support the CNN pipeline</span>
-        </div>
+  <div class="project fade-in">
+    <div class="project-text">
+      <div class="project-number">06</div>
+      <h3 class="project-title">Time-Lapse Imaging and Embryo Morphokinetics</h3>
+      <p class="project-student">Deeksha Kumar</p>
+      <p class="project-desc">This project analyzes embryo time-lapse imaging data to connect morphokinetic behavior with developmental potential. The work supports the imaging arm of the Digital Embryo by transforming visual development into quantitative features that can be integrated with molecular data.</p>
+      <div class="detail-label">Major Questions</div>
+      <div class="project-questions">
+        <span>Which morphokinetic events distinguish embryos that progress from those that arrest?</span>
+        <span>Can imaging-derived features complement molecular predictors?</span>
+        <span>How should visual developmental dynamics be represented for multi-modal modeling?</span>
       </div>
-      <div class="project-image">
-        <img src="images/eric-image.jpg" alt="description" style="width:100%;height:100%;object-fit:contain;">
+      <div class="detail-label">Methods</div>
+      <div class="methods">
+        <span class="method-tag">Time-lapse imaging</span><span class="method-tag">Morphokinetics</span><span class="method-tag">Feature extraction</span><span class="method-tag">Embryo annotation</span>
       </div>
     </div>
+    <div class="project-image contain"><img src="images/project-tli-morphokinetics.png" alt="Embryo time-lapse imaging and morphokinetics schematic"></div>
+  </div>
 
-    <div class="project fade-in">
-      <div class="project-text">
-        <div class="project-number">07</div>
-        <h3 class="project-title">Building a Multi-Omic Atlas of Human Preimplantation Development and Embryonic Arrest</h3>
-        <p class="project-student">Matthew Shen, Incoming Freshman at University of Pennsylvania, Neuroscience Candidate</p>
-        <p class="project-desc">I am building a unified single-cell RNA-seq atlas of human preimplantation embryo development by reprocessing datasets through a standardized pipeline on the Nibi HPC cluster. Each dataset is aligned to the CHM13v2.0 reference genome using STAR, quantified with featureCounts and Salmon, and quality-controlled with BAM-level mitochondrial estimation, preserving high-mito cells that represent the arrest signal under study. By harmonizing metadata and applying consistent normalization across thousands of cells spanning zygote to blastocyst, I create a foundation for cross-dataset comparison of normal developmental trajectories against embryonic arrest. The goal is to classify distinct molecular failure modes and identify candidate regulatory drivers of why over half of IVF embryos fail to develop.</p>
-        <div class="detail-label">Major Questions</div>
-        <div class="project-questions">
-          <span>Where do arrested embryos diverge from normal developmental trajectories in transcriptomic space, and do distinct failure modes cluster into reproducible classes?</span>
-          <span>Which genes and regulatory programs distinguish successful embryonic genome activation from incomplete or failed activation in arrested embryos?</span>
-          <span>Can a uniformly reprocessed multi-dataset atlas reveal cross-study molecular signatures of arrest that individual datasets miss?</span>
-        </div>
-        <div class="detail-label">Methods</div>
-        <div class="methods">
-          <span class="method-tag">STAR alignment to CHM13v2.0 + featureCounts/Salmon quantification</span>
-          <span class="method-tag">Scran normalization, HVG selection, PCA, UMAP visualization</span>
-          <span class="method-tag">BAM-level mitochondrial % estimation (samtools idxstats) to preserve arrest signal</span>
-        </div>
+  <div class="project fade-in">
+    <div class="project-text">
+      <div class="project-number">07</div>
+      <h3 class="project-title">Genetic Variant and Allelic Analysis Backbone</h3>
+      <p class="project-student">Jaylan Tran</p>
+      <p class="project-desc">This project builds the variant-calling and allelic-analysis layer needed to support embryo-level comparisons across datasets. The work provides a foundation for ancestry-aware quality control, genetic feature annotation, and arrest-related allelic hypotheses.</p>
+      <div class="detail-label">Major Questions</div>
+      <div class="project-questions">
+        <span>Can embryo-level variant information be recovered robustly from single-cell RNA-seq?</span>
+        <span>How do genetic and allelic features support cross-dataset quality control?</span>
+        <span>Which variant and allelic signals are useful for arrest-focused analyses?</span>
       </div>
-      <div class="project-image">
-        <img src="images/project-image-matthew.jpg" alt="description" style="width:100%;height:100%;object-fit:contain;background:#06080f;">
+      <div class="detail-label">Methods</div>
+      <div class="methods">
+        <span class="method-tag">Monopogen</span><span class="method-tag">GATK</span><span class="method-tag">VCF workflows</span><span class="method-tag">PLINK</span><span class="method-tag">Allelic counts</span>
       </div>
     </div>
+    <div class="project-image contain"><img src="images/project-image-matthew.jpg" alt="Digital Embryo variant and atlas analysis visualization"></div>
+  </div>
 
-    <div class="project fade-in">
-      <div class="project-text">
-        <div class="project-number">08</div>
-        <h3 class="project-title">Expressed Genetic Variant Analysis from Bulk RNA-seq in Recurrent Implantation Failure</h3>
-        <p class="project-student">Emmanuel Arzoumanidis, HBSc Candidate</p>
-        <p class="project-desc">My project uses bulk endometrial RNA-seq data to identify expressed genetic variants associated with recurrent implantation failure (RIF). I am repurposing these datasets to detect single nucleotide variants and small indels within expressed transcripts. I use a standardized bioinformatics approach to call, filter, annotate, and prioritize variants, then compare them against literature-supported RIF-associated variants. The goal is to determine whether expressed variants in implantation-related pathways may contribute to expression of the RIF-associated phenotype. </p>
-        <div class="detail-label">Major Questions</div>
-        <div class="project-questions">
-          <span>Can expressed genetic variants in the endometrium play a major role in contributing to recurrent implantation failure?</span>
-          <span>Which biological pathways are most strongly implicated by expressed variations detected in RIF, such as angiogenesis, immune regulation, methylation, and endometrial receptivity?</span>
-        </div>
-        <div class="detail-label">Methods</div>
-        <div class="methods">
-          <span class="method-tag">Quality control (FastQC, MultiQC)</span>
-          <span class="method-tag">Alignment (STAR)</span>
-          <span class="method-tag">RG addition and post-alignment processing (GATK)</span>
-          <span class="method-tag">Variant Calling and joint genotyping (GATK HalotypeCaller, CombineGVCFs)</span>
-          <span class="method-tag">Annotation (bcftools)</span>
-          <span class="method-tag">Genotype Analysis</span>
-        </div>
+  <div class="project fade-in">
+    <div class="project-text">
+      <div class="project-number">08</div>
+      <h3 class="project-title">RNA Velocity and Developmental Directionality</h3>
+      <p class="project-student">Eitan Lenga</p>
+      <p class="project-desc">This project uses RNA velocity to infer developmental directionality from spliced and unspliced transcript counts. By comparing typical trajectories with arrested embryos, the work identifies where transcriptional progression begins to diverge.</p>
+      <div class="detail-label">Major Questions</div>
+      <div class="project-questions">
+        <span>How do velocity directionality and confidence differ between progression and arrest?</span>
+        <span>Which genes carry the strongest dynamic signal during early development?</span>
+        <span>Can velocity-derived features improve cross-dataset comparison of embryo trajectories?</span>
       </div>
-      <div class="project-image">
-        <img src="images/emmanuel-project-image.png" alt="description" style="width:100%;height:100%;object-fit:contain;background:#06080f;">
+      <div class="detail-label">Methods</div>
+      <div class="methods">
+        <span class="method-tag">Velocyto</span><span class="method-tag">scVelo</span><span class="method-tag">Scanpy</span><span class="method-tag">UMAP</span><span class="method-tag">Trajectory analysis</span>
       </div>
     </div>
-  <!--
-    ══ ADD A NEW PROJECT ══
-    Copy and paste this block above the closing </main> tag:
-
-    <div class="project fade-in">
-      <div class="project-text">
-        <div class="project-number">04</div>
-        <h3 class="project-title">Your Project Title</h3>
-        <p class="project-student">Student Name, Role</p>
-        <p class="project-desc">Description of the project...</p>
-        <div class="detail-label">Major Questions</div>
-        <div class="project-questions">
-          <span>Question 1</span>
-          <span>Question 2</span>
-        </div>
-        <div class="detail-label">Methods</div>
-        <div class="methods">
-          <span class="method-tag">Method 1</span>
-        </div>
-      </div>
-      <div class="project-image">
-        <img src="your-image.jpg" alt="description">
-      </div>
-    </div>
-  -->
-
+    <div class="project-image contain"><img src="images/UMAP-Image-eitan.jpg" alt="RNA velocity UMAP visualization of embryo development"></div>
+  </div>
 </main>
 
 <footer class="footer">
-  <p class="footer-text">&copy; 2026 Russell Research Lab — Wilfrid Laurier University</p>
+  <p class="footer-text">&copy; 2026 Russell Research Lab, Wilfrid Laurier University</p>
   <div class="footer-links">
     <a href="index.html">Home</a>
     <a href="research.html">Research</a>
